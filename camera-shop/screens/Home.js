@@ -43,8 +43,7 @@ const Home = () => {
               flex: 1,
               flexDirection: "row",
               justifyContent: "space-between",
-              paddingHorizontal: 10,
-              paddingVertical: 5,
+              padding: SIZES.small,
             }}
           >
             <TouchableOpacity>
@@ -119,6 +118,7 @@ const Home = () => {
                   paddingHorizontal: SIZES.small,
                   backgroundColor: COLORS.secondary,
                   borderRadius: 2,
+                  marginLeft: SIZES.font * 4,
                 }}
               >
                 <Text
@@ -126,6 +126,7 @@ const Home = () => {
                     ...FONTS.headText,
                     color: COLORS.white,
                     textTransform: "uppercase",
+                    fontFamily: "OpenSans-Bold",
                   }}
                 >
                   In Stock
@@ -133,7 +134,12 @@ const Home = () => {
               </View>
             </View>
 
-            <View style={{ paddingHorizontal: SIZES.font * 2 }}>
+            <View
+              style={{
+                paddingHorizontal: SIZES.font * 2,
+                marginTop: -SIZES.small,
+              }}
+            >
               <Text
                 style={{
                   ...FONTS.title,
@@ -141,7 +147,7 @@ const Home = () => {
                   color: COLORS.white,
                 }}
               >
-                $3.599
+                €3.599
               </Text>
             </View>
 
@@ -149,6 +155,7 @@ const Home = () => {
               style={{
                 flex: 1,
                 flexDirection: "row",
+                marginTop: SIZES.base,
               }}
             >
               <ImageBackground
@@ -172,7 +179,7 @@ const Home = () => {
                 <Text
                   style={{
                     ...FONTS.bodyText,
-                    color: COLORS.white,
+                    color: COLORS.tertiary,
                     textAlign: "justify",
                   }}
                 >
@@ -185,7 +192,13 @@ const Home = () => {
                 </Text>
 
                 <View style={{ marginTop: SIZES.font2 }}>
-                  <Text style={{ ...FONTS.headText, color: COLORS.white }}>
+                  <Text
+                    style={{
+                      ...FONTS.headText,
+                      color: COLORS.white,
+                      fontFamily: "OpenSans-Bold",
+                    }}
+                  >
                     MADE WITH Mk IV
                   </Text>
 

@@ -19,9 +19,8 @@ export const SIZES = {
 
 export const FONTS = {
   title: {
-    fontFamily: "OpenSans-ExtraBold",
+    fontFamily: "OpenSans-Bold",
     fontSize: SIZES.font3,
-    lineHeight: 96,
   },
   heading: {
     fontFamily: "OpenSans-Bold",
