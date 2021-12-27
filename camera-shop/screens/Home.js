@@ -36,7 +36,7 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
       <FocusedStatusBar backgroundColor={COLORS.primary} />
 
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1 }}>
           <View
             style={{
@@ -62,8 +62,8 @@ const Home = () => {
             </TouchableOpacity>
           </View>
 
-          <View>
-            <View style={{ position: "absolute" }}>
+          <View style={{ width: "100%" }}>
+            <View style={{ width: "100%", position: "absolute" }}>
               <Text
                 style={{
                   ...FONTS.heading,
@@ -83,7 +83,8 @@ const Home = () => {
                 resizeMode="stretch"
                 style={{
                   position: "absolute",
-                  width: 360,
+                  width: "100%",
+                  maxWidth: 400,
                   height: 460,
                 }}
               />
@@ -100,7 +101,8 @@ const Home = () => {
                 source={images.cam}
                 resizeMode="stretch"
                 style={{
-                  width: 300,
+                  width: "100%",
+                  maxWidth: 400,
                   height: 290,
                 }}
               />
@@ -108,44 +110,48 @@ const Home = () => {
 
             <View
               style={{
-                justifyContent: "center",
-                alignItems: "center",
+                flex: 1,
+                maxWidth: 276,
+                justifyContent: "flex-end",
+                paddingHorizontal: SIZES.font * 2,
               }}
             >
               <View
                 style={{
-                  paddingVertical: SIZES.small / 2,
-                  paddingHorizontal: SIZES.small,
-                  backgroundColor: COLORS.secondary,
-                  borderRadius: 2,
-                  marginLeft: SIZES.font * 4,
+                  justifyContent: "flex-end",
+                  alignItems: "flex-end",
+                  width: "100%",
                 }}
               >
-                <Text
+                <View
                   style={{
-                    ...FONTS.headText,
-                    color: COLORS.white,
-                    textTransform: "uppercase",
-                    fontFamily: "OpenSans-Bold",
+                    paddingVertical: SIZES.small / 2,
+                    paddingHorizontal: SIZES.small,
+                    backgroundColor: COLORS.secondary,
+                    borderRadius: 2,
                   }}
                 >
-                  In Stock
-                </Text>
+                  <Text
+                    style={{
+                      ...FONTS.headText,
+                      color: COLORS.white,
+                      textTransform: "uppercase",
+                      fontFamily: "OpenSans-Bold",
+                    }}
+                  >
+                    In Stock
+                  </Text>
+                </View>
               </View>
-            </View>
 
-            <View
-              style={{
-                paddingHorizontal: SIZES.font * 2,
-                marginTop: -SIZES.small,
-              }}
-            >
               <Text
                 style={{
                   ...FONTS.title,
                   textAlign: "left",
                   color: COLORS.white,
+                  marginTop: -SIZES.font,
                 }}
+                numberOfLines={1}
               >
                 €3.599
               </Text>
@@ -162,7 +168,8 @@ const Home = () => {
                 source={images.brand}
                 resizeMode="stretch"
                 style={{
-                  width: 250,
+                  width: "100%",
+                  maxWidth: 250,
                   height: 260,
                   position: "absolute",
                   marginTop: -SIZES.font2,
