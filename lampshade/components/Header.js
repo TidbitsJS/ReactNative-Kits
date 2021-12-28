@@ -53,9 +53,7 @@ const Dots = ({ color, title, isActive, setActive }) => {
   );
 };
 
-const Header = () => {
-  const [active, setActive] = React.useState("Yellow");
-
+const Header = ({ active, setActive }) => {
   return (
     <View
       style={{
@@ -72,14 +70,16 @@ const Header = () => {
           position: "absolute",
           flexDirection: "row",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: "flex-start",
         }}
       >
-        <Image
-          source={icons.arrow}
-          resizeMode="contain"
-          style={{ width: 16, height: 12, paddingHorizontal: 20 }}
-        />
+        <TouchableOpacity style={{ marginLeft: 20, marginTop: 20 }}>
+          <Image
+            source={icons.arrow}
+            resizeMode="contain"
+            style={{ width: 20, height: 20 }}
+          />
+        </TouchableOpacity>
 
         <View
           style={{
@@ -91,7 +91,7 @@ const Header = () => {
             borderBottomLeftRadius: 40,
           }}
         >
-          <View>
+          <TouchableOpacity>
             <Image
               source={icons.cart}
               resizeMode="contain"
@@ -108,7 +108,7 @@ const Header = () => {
                 top: -2,
               }}
             />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -133,7 +133,7 @@ const Header = () => {
       >
         <Dots
           color="#fff"
-          title="Yellow"
+          title="White"
           isActive={active}
           setActive={setActive}
         />
