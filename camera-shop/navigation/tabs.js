@@ -5,6 +5,7 @@ import Home from "../screens/Home";
 import { COLORS } from "../constants/theme";
 import { icons } from "../constants";
 import Search from "../screens/Search";
+import Clip from "../screens/Clip";
 
 const Tab = createBottomTabNavigator();
 
@@ -82,7 +83,7 @@ const Tabs = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Search} />
-      <Tab.Screen name="Clips" component={Home} />
+      <Tab.Screen name="Clips" component={Clip} />
       <Tab.Screen name="Cart" component={Home} />
     </Tab.Navigator>
   );
