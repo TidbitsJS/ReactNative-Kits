@@ -5,12 +5,12 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
-  TouchableOpacity,
   ImageBackground,
-  FlatList,
 } from "react-native";
-import { icons, images } from "../constants";
-import { COLORS, FONTS, SIZES } from "../constants/theme";
+import Header from "../components/Header";
+import Info from "../components/Info";
+import Price from "../components/Price";
+import { images, COLORS, FONTS, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const data = [
@@ -38,29 +38,7 @@ const Home = () => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1 }}>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              padding: SIZES.small,
-            }}
-          >
-            <TouchableOpacity>
-              <Image
-                source={icons.arrow}
-                resizeMode="contain"
-                style={{ width: 20, height: 20 }}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image
-                source={icons.menu}
-                resizeMode="contain"
-                style={{ width: 20, height: 20 }}
-              />
-            </TouchableOpacity>
-          </View>
+          <Header />
 
           <View style={{ width: "100%" }}>
             <View style={{ width: "100%", position: "absolute" }}>
@@ -71,7 +49,7 @@ const Home = () => {
                   color: COLORS.white,
                   paddingHorizontal: SIZES.base * 2,
                   position: "absolute",
-                  top: SIZES.font * 3,
+                  top: SIZES.font * 2,
                   left: SIZES.base,
                   zIndex: 1,
                 }}
@@ -108,54 +86,7 @@ const Home = () => {
               />
             </View>
 
-            <View
-              style={{
-                flex: 1,
-                maxWidth: 276,
-                justifyContent: "flex-end",
-                paddingHorizontal: SIZES.font * 2,
-              }}
-            >
-              <View
-                style={{
-                  justifyContent: "flex-end",
-                  alignItems: "flex-end",
-                  width: "100%",
-                }}
-              >
-                <View
-                  style={{
-                    paddingVertical: SIZES.small / 2,
-                    paddingHorizontal: SIZES.small,
-                    backgroundColor: COLORS.secondary,
-                    borderRadius: 2,
-                  }}
-                >
-                  <Text
-                    style={{
-                      ...FONTS.headText,
-                      color: COLORS.white,
-                      textTransform: "uppercase",
-                      fontFamily: "OpenSans-Bold",
-                    }}
-                  >
-                    In Stock
-                  </Text>
-                </View>
-              </View>
-
-              <Text
-                style={{
-                  ...FONTS.title,
-                  textAlign: "left",
-                  color: COLORS.white,
-                  marginTop: -SIZES.font,
-                }}
-                numberOfLines={1}
-              >
-                €3.599
-              </Text>
-            </View>
+            <Price amount={3.599} />
 
             <View
               style={{
@@ -198,40 +129,7 @@ const Home = () => {
                   creative videographers.
                 </Text>
 
-                <View style={{ marginTop: SIZES.font2 }}>
-                  <Text
-                    style={{
-                      ...FONTS.headText,
-                      color: COLORS.white,
-                      fontFamily: "OpenSans-Bold",
-                    }}
-                  >
-                    MADE WITH Mk IV
-                  </Text>
-
-                  <FlatList
-                    data={data}
-                    renderItem={({ item }) => (
-                      <View
-                        style={{
-                          width: 80,
-                          height: 80,
-                          margin: SIZES.small / 2,
-                        }}
-                      >
-                        <Image
-                          source={item.photo}
-                          style={{ width: "100%", height: "100%" }}
-                          resizeMode="contain"
-                        />
-                      </View>
-                    )}
-                    keyExtractor={(item) => item.id}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    showsVerticalScrollIndicator={false}
-                  />
-                </View>
+                <Info title="MADE WITH Mk IV" data={data} />
               </View>
             </View>
           </View>

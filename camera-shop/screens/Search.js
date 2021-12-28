@@ -5,12 +5,12 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
-  TouchableOpacity,
   ImageBackground,
-  FlatList,
 } from "react-native";
-import { icons, images } from "../constants";
-import { COLORS, FONTS, SIZES } from "../constants/theme";
+import Header from "../components/Header";
+import Info from "../components/Info";
+import Price from "../components/Price";
+import { images, COLORS, FONTS, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const data = [
@@ -38,29 +38,7 @@ const Search = () => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1 }}>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              padding: SIZES.small,
-            }}
-          >
-            <TouchableOpacity>
-              <Image
-                source={icons.arrow}
-                resizeMode="contain"
-                style={{ width: 20, height: 20 }}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image
-                source={icons.menu}
-                resizeMode="contain"
-                style={{ width: 20, height: 20 }}
-              />
-            </TouchableOpacity>
-          </View>
+          <Header />
 
           <View style={{ width: "100%" }}>
             <View style={{ width: "100%", position: "absolute" }}>
@@ -95,75 +73,28 @@ const Search = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 marginTop: SIZES.font2 * 2,
+                marginBottom: SIZES.font,
               }}
             >
               <Image
                 source={images.nikon}
-                resizeMode="stretch"
+                resizeMode="contain"
                 style={{
                   width: "100%",
-                  maxWidth: 250,
-                  height: 210,
+                  maxWidth: 400,
+                  height: 255,
                 }}
               />
             </View>
 
-            <View
-              style={{
-                flex: 1,
-                maxWidth: 276,
-                justifyContent: "flex-end",
-                paddingHorizontal: SIZES.font * 2,
-                marginTop: SIZES.font,
-              }}
-            >
-              <View
-                style={{
-                  justifyContent: "flex-end",
-                  alignItems: "flex-end",
-                  width: "100%",
-                }}
-              >
-                <View
-                  style={{
-                    paddingVertical: SIZES.small / 2,
-                    paddingHorizontal: SIZES.small,
-                    backgroundColor: COLORS.secondary,
-                    borderRadius: 2,
-                  }}
-                >
-                  <Text
-                    style={{
-                      ...FONTS.headText,
-                      color: COLORS.white,
-                      textTransform: "uppercase",
-                      fontFamily: "OpenSans-Bold",
-                    }}
-                  >
-                    In Stock
-                  </Text>
-                </View>
-              </View>
-
-              <Text
-                style={{
-                  ...FONTS.title,
-                  textAlign: "left",
-                  color: COLORS.white,
-                  marginTop: -SIZES.font,
-                }}
-                numberOfLines={1}
-              >
-                €3.499
-              </Text>
-            </View>
+            <Price amount="3.499" />
 
             <View
               style={{
                 flex: 1,
                 flexDirection: "row",
                 marginTop: SIZES.font2,
-                minHeight: 260,
+                minHeight: 230,
               }}
             >
               <ImageBackground
@@ -198,40 +129,7 @@ const Search = () => {
                   that makes the impossible possible
                 </Text>
 
-                <View style={{ marginTop: SIZES.font2 }}>
-                  <Text
-                    style={{
-                      ...FONTS.headText,
-                      color: COLORS.white,
-                      fontFamily: "OpenSans-Bold",
-                    }}
-                  >
-                    MADE WITH D5
-                  </Text>
-
-                  <FlatList
-                    data={data}
-                    renderItem={({ item }) => (
-                      <View
-                        style={{
-                          width: 80,
-                          height: 80,
-                          margin: SIZES.small / 2,
-                        }}
-                      >
-                        <Image
-                          source={item.photo}
-                          style={{ width: "100%", height: "100%" }}
-                          resizeMode="contain"
-                        />
-                      </View>
-                    )}
-                    keyExtractor={(item) => item.id}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    showsVerticalScrollIndicator={false}
-                  />
-                </View>
+                <Info title="MADE WITH D5" data={data} />
               </View>
             </View>
           </View>
