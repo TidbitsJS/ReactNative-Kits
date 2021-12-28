@@ -133,7 +133,7 @@ const Header = () => {
       >
         <Dots
           color="#fff"
-          title="White"
+          title="Yellow"
           isActive={active}
           setActive={setActive}
         />

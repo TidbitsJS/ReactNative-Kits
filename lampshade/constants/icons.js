@@ -4,7 +4,7 @@ import heart from "../assets/icons/heart.png";
 import lamp from "../assets/icons/lamp.png";
 import material01 from "../assets/icons/material01.png";
 import material02 from "../assets/icons/material02.png";
-import wave from "../assets/icons/wave.png";
+import cable from "../assets/icons/cable.png";
 
 export default {
   arrow,
@@ -13,5 +13,5 @@ export default {
   lamp,
   material01,
   material02,
-  wave,
+  cable,
 };
