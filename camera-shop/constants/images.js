@@ -2,11 +2,14 @@ import cam from "../assets/images/cam.png";
 import oval from "../assets/images/oval.png";
 import blueoval from "../assets/images/blueoval.png";
 import greenoval from "../assets/images/greenoval.png";
+import orangeoval from "../assets/images/orangeoval.png";
 import d5 from "../assets/images/d5.png";
 import a7r from "../assets/images/a7r.png";
+import lens from "../assets/images/lens.png";
 import brand from "../assets/images/brand.png";
 import nikon from "../assets/images/nikon.png";
 import sony from "../assets/images/sony.png";
+import equipment from "../assets/images/equipment.png";
 import photo01 from "../assets/images/photo01.png";
 import photo02 from "../assets/images/photo02.png";
 import photo03 from "../assets/images/photo03.png";
@@ -21,12 +24,15 @@ export default {
   d5,
   cam,
   a7r,
+  lens,
   oval,
   blueoval,
   greenoval,
+  orangeoval,
   sony,
   brand,
   nikon,
+  equipment,
   photo01,
   photo02,
   photo03,

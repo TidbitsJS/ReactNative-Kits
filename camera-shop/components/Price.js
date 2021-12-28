@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { SIZES, COLORS, FONTS } from "../constants";
 
-const Price = ({ amount }) => {
+const Price = ({ amount, title }) => {
   return (
     <View
       style={{
@@ -35,7 +35,7 @@ const Price = ({ amount }) => {
               fontFamily: "OpenSans-Bold",
             }}
           >
-            In Stock
+            {title ? title : "In Stock"}
           </Text>
         </View>
       </View>

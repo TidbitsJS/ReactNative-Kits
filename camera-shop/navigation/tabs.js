@@ -6,6 +6,7 @@ import { COLORS } from "../constants/theme";
 import { icons } from "../constants";
 import Search from "../screens/Search";
 import Clip from "../screens/Clip";
+import Cart from "../screens/Cart";
 
 const Tab = createBottomTabNavigator();
 
@@ -20,8 +21,6 @@ const Tabs = () => {
           backgroundColor: COLORS.primary,
         },
         tabBarIcon: ({ focused }) => {
-          const tintColor = focused ? COLORS.red : COLORS.tertiary;
-
           switch (route.name) {
             case "Home":
               return (
@@ -31,7 +30,7 @@ const Tabs = () => {
                   style={{
                     width: 20,
                     height: 20,
-                    tintColor: tintColor,
+                    tintColor: focused ? COLORS.red : COLORS.tertiary,
                   }}
                 />
               );
@@ -44,7 +43,7 @@ const Tabs = () => {
                   style={{
                     width: 20,
                     height: 20,
-                    tintColor: tintColor,
+                    tintColor: focused ? COLORS.blue : COLORS.tertiary,
                   }}
                 />
               );
@@ -57,7 +56,7 @@ const Tabs = () => {
                   style={{
                     width: 20,
                     height: 20,
-                    tintColor: tintColor,
+                    tintColor: focused ? COLORS.green : COLORS.tertiaryColor,
                   }}
                 />
               );
@@ -70,7 +69,7 @@ const Tabs = () => {
                   style={{
                     width: 25,
                     height: 25,
-                    tintColor: tintColor,
+                    tintColor: focused ? COLORS.orange : COLORS.tertiary,
                   }}
                 />
               );
@@ -84,7 +83,7 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Clips" component={Clip} />
-      <Tab.Screen name="Cart" component={Home} />
+      <Tab.Screen name="Cart" component={Cart} />
     </Tab.Navigator>
   );
 };

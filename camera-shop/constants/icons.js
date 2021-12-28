@@ -4,6 +4,10 @@ import home from "../assets/icons/home.png";
 import search from "../assets/icons/search.png";
 import arrow from "../assets/icons/arrow.png";
 import menu from "../assets/icons/menu.png";
+import macro from "../assets/icons/macro.png";
+import prime from "../assets/icons/prime.png";
+import tele from "../assets/icons/tele.png";
+import zoom from "../assets/icons/zoom.png";
 
 export default {
   cart,
@@ -12,4 +16,8 @@ export default {
   search,
   arrow,
   menu,
+  macro,
+  prime,
+  tele,
+  zoom,
 };
