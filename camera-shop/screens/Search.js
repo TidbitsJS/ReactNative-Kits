@@ -94,7 +94,6 @@ const Search = () => {
                 flex: 1,
                 flexDirection: "row",
                 marginTop: SIZES.font2,
-                minHeight: 230,
               }}
             >
               <ImageBackground
@@ -105,6 +104,7 @@ const Search = () => {
                   maxWidth: 250,
                   height: 260,
                   position: "absolute",
+                  top: -SIZES.font2,
                 }}
               />
               <View style={{ flex: 0.7 }} />

@@ -6,7 +6,6 @@ import {
   ScrollView,
   Image,
   ImageBackground,
-  FlatList,
 } from "react-native";
 import Header from "../components/Header";
 import Price from "../components/Price";
@@ -139,31 +138,36 @@ const Cart = () => {
                   light conditions and environments.
                 </Text>
 
-                <View style={{ flex: 1, marginTop: SIZES.small }}>
-                  <FlatList
-                    data={data}
-                    renderItem={({ item }) => (
-                      <View style={{ flex: 1, margin: 10 }}>
-                        <Image
-                          source={item.photo}
-                          style={{ width: 40, height: 30 }}
-                          resizeMode="contain"
-                        />
-                        <Text
-                          style={{
-                            ...FONTS.bodyText,
-                            textTransform: "uppercase",
-                            color: COLORS.white,
-                            fontFamily: "OpenSans-Bold",
-                          }}
-                        >
-                          {item.title}
-                        </Text>
-                      </View>
-                    )}
-                    keyExtractor={(item) => item.id.toString()}
-                    numColumns={2}
-                  />
+                <View
+                  style={{
+                    flex: 1,
+                    flexWrap: "wrap",
+                    flexDirection: "row",
+                    marginTop: SIZES.small,
+                  }}
+                >
+                  {data.map((item) => (
+                    <View
+                      style={{ flex: 1, minWidth: 70, margin: 10 }}
+                      key={item.title}
+                    >
+                      <Image
+                        source={item.photo}
+                        style={{ width: 40, height: 30 }}
+                        resizeMode="contain"
+                      />
+                      <Text
+                        style={{
+                          ...FONTS.bodyText,
+                          textTransform: "uppercase",
+                          color: COLORS.white,
+                          fontFamily: "OpenSans-Bold",
+                        }}
+                      >
+                        {item.title}
+                      </Text>
+                    </View>
+                  ))}
                 </View>
               </View>
             </View>

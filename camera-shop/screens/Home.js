@@ -103,7 +103,7 @@ const Home = () => {
                   maxWidth: 250,
                   height: 260,
                   position: "absolute",
-                  marginTop: -SIZES.font2,
+                  top: -SIZES.font2,
                 }}
               />
               <View style={{ flex: 0.7 }} />

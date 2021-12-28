@@ -105,6 +105,7 @@ const Clip = () => {
                   maxWidth: 250,
                   height: 260,
                   position: "absolute",
+                  top: -SIZES.font2,
                 }}
               />
               <View style={{ flex: 0.7 }} />
