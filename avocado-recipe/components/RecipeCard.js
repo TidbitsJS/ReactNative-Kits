@@ -7,7 +7,7 @@ const RecipeCard = ({ item, index }) => {
     <TouchableOpacity
       style={{
         width: 225,
-        marginRight: index === 0 ? SIZES.font : 0,
+        marginRight: index === 0 ? SIZES.padding * 1.5 : 0,
       }}
     >
       <Image
@@ -95,7 +95,7 @@ const RecipeCard = ({ item, index }) => {
                 textAlign: "right",
               }}
             >
-              Under {item.time} min
+              Under {item.time} Min
             </Text>
           </View>
         </View>

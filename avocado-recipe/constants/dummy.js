@@ -23,7 +23,7 @@ const breakfast = [
   {
     id: "b-1",
     name: "Keto Avocado Sandwich",
-    image: images.recipe03,
+    image: images.recipe02,
   },
   {
     id: "b-2",
