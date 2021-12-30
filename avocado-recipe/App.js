@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import Home from "./screens/Home";
+import Recipe from "./screens/Recipe";
 
 const theme = {
   ...DefaultTheme,
@@ -22,6 +23,7 @@ function App() {
         initialRouteName="Home"
       >
         <stack.Screen name="Home" component={Home} />
+        <stack.Screen name="Recipe" component={Recipe} />
       </stack.Navigator>
     </NavigationContainer>
   );

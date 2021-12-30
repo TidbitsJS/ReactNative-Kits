@@ -2,13 +2,14 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { icons, COLORS, SIZES } from "../constants";
 
-const RecipeCard = ({ item, index }) => {
+const RecipeCard = ({ item, index, navigation }) => {
   return (
     <TouchableOpacity
       style={{
         width: 225,
         marginRight: index === 0 ? SIZES.padding * 1.5 : 0,
       }}
+      onPress={() => navigation.navigate("Recipe", { item })}
     >
       <Image
         source={item.image}

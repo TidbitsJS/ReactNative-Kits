@@ -12,7 +12,7 @@ import RecipeCard from "../components/RecipeCard";
 import { icons, COLORS, SIZES, data } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -84,7 +84,7 @@ const Home = () => {
               data={data.recipes}
               keyExtractor={(item) => item.id}
               renderItem={({ item, index }) => (
-                <RecipeCard item={item} index={index} />
+                <RecipeCard item={item} index={index} navigation={navigation} />
               )}
               horizontal
               showsHorizontalScrollIndicator={false}
