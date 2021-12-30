@@ -5,8 +5,10 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
-import { icons, COLORS, SIZES } from "../constants";
+import RecipeCard from "../components/RecipeCard";
+import { icons, COLORS, SIZES, data } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Home = () => {
@@ -73,6 +75,18 @@ const Home = () => {
           >
             Avocado recipe
           </Text>
+        </View>
+
+        <View style={{ marginVertical: SIZES.font }}>
+          <FlatList
+            data={data.recipes}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item, index }) => (
+              <RecipeCard item={item} index={index} />
+            )}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          />
         </View>
       </View>
     </SafeAreaView>
