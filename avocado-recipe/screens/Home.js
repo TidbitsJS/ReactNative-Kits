@@ -92,17 +92,31 @@ const Home = ({ navigation }) => {
           </View>
 
           <View style={{ marginVertical: SIZES.base }}>
-            <Text
+            <View
               style={{
-                fontSize: SIZES.padding * 1.25,
-                color: COLORS.primary,
-                fontWeight: "bold",
-                letterSpacing: 0.4,
+                width: "100%",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
                 marginBottom: SIZES.font,
               }}
             >
-              Breakfast
-            </Text>
+              <Text
+                style={{
+                  fontSize: SIZES.padding * 1.25,
+                  color: COLORS.primary,
+                  fontWeight: "bold",
+                  letterSpacing: 0.4,
+                }}
+              >
+                Breakfast
+              </Text>
+              <TouchableOpacity>
+                <Text style={{ fontSize: SIZES.font, color: COLORS.tertiary }}>
+                  View All
+                </Text>
+              </TouchableOpacity>
+            </View>
 
             <FlatList
               data={data.breakfast}
