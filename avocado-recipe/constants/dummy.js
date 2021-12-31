@@ -8,6 +8,20 @@ const recipes = [
     people: 120,
     time: 30,
     image: images.recipe01,
+    steps: [
+      "1 slice of whole-wheat toast",
+      "3 slices smoked salmon",
+      "1/2 avocado",
+      "1/8 teaspoon salt",
+      "1/8 teaspoon pepper",
+    ],
+    preparation: [
+      "Thinly slice half of an avovado. Keep slices together and start molding them into a line.",
+      "Start folding one end inside and wrapping other end around in a towel.",
+      "Spread the smoked salmon on the avocado slices and top with the remaining slices of avovado.",
+      "Serve with a side of salad and a side of sour cream.",
+      "Enjoy!",
+    ],
   },
   {
     id: "r-2",
@@ -16,6 +30,20 @@ const recipes = [
     people: 100,
     time: 30,
     image: images.recipe03,
+    steps: [
+      "1 slice of whole-wheat toast",
+      "3 slices smoked salmon",
+      "1/2 avocado",
+      "1/8 teaspoon salt",
+      "1/8 teaspoon pepper",
+    ],
+    preparation: [
+      "Thinly slice half of an avovado. Keep slices together and start molding them into a line.",
+      "Start folding one end inside and wrapping other end around in a towel.",
+      "Spread the smoked salmon on the avocado slices and top with the remaining slices of avovado.",
+      "Serve with a side of salad and a side of sour cream.",
+      "Enjoy!",
+    ],
   },
 ];
 
