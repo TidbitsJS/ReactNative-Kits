@@ -6,6 +6,8 @@ const COLORS = {
   white: "#FFFFFF",
   lightWhite: "#F7F1EA",
   brownWhite: "#CAACAC",
+
+  brownBG: "rgba(247, 241, 234, 0.35);",
 };
 
 const SIZES = {
