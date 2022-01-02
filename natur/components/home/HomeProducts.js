@@ -135,7 +135,7 @@ const HomeProducts = () => {
       </View>
 
       <View
-        style={{ marginHorizontal: SIZES.large, marginVertical: SIZES.base }}
+        style={{ marginHorizontal: SIZES.large, marginTop: SIZES.small / 2 }}
       >
         <FlatList
           data={chairs}
