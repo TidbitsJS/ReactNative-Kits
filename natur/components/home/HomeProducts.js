@@ -1,78 +1,108 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  FlatList,
+  ImageBackground,
+  Animated,
+  Easing,
+} from "react-native";
 import { chairs, COLORS, FONTS, icons, SIZES } from "../../constants";
 import { SHADOW } from "../../constants/theme";
 
-const ProductCard = ({ index, chair }) => {
+const ProductCard = ({ index, chair, activeProduct }) => {
+  const heightInc = React.useRef(new Animated.Value(276)).current;
+
+  React.useEffect(() => {
+    if (activeProduct === index) {
+      Animated.timing(heightInc, {
+        toValue: 306,
+        easing: Easing.linear,
+        duration: 250,
+        useNativeDriver: false,
+      }).start();
+    } else {
+      Animated.timing(heightInc, {
+        toValue: 276,
+        easing: Easing.linear,
+        duration: 250,
+        useNativeDriver: false,
+      }).start();
+    }
+  }, [activeProduct]);
+
   return (
     <View
       style={{
         minWidth: 217,
-        minHeight: 350,
+        minHeight: 370,
         marginRight: index === chairs.length - 1 ? 0 : SIZES.large,
+        justifyContent: "center",
+        marginTop: -SIZES.small,
+        marginBottom: SIZES.base,
       }}
     >
-      <TouchableOpacity activeOpacity={0.75} style={{ minHeight: 320 }}>
-        <Image
+      <Animated.View style={{ height: heightInc }}>
+        <ImageBackground
           source={chair.img}
           resizeMode="cover"
           style={{
-            width: 217,
-            height: 306,
-            position: "absolute",
-            borderRadius: SIZES.small,
+            width: 210,
+            height: "100%",
           }}
-        />
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            paddingHorizontal: SIZES.base,
-            paddingVertical: SIZES.small,
-            position: "absolute",
-            bottom: 0,
-          }}
+          imageStyle={{ borderRadius: SIZES.small }}
         >
-          <View style={{ flex: 1 }}>
-            <Text
-              style={{
-                ...FONTS.subHeading,
-                color: COLORS.secondary,
-              }}
-            >
-              {chair.price}
-            </Text>
-            <Text
-              style={{
-                ...FONTS.body,
-                color: COLORS.secondary,
-              }}
-            >
-              {chair.name}
-            </Text>
-          </View>
-          <TouchableOpacity
+          <View
             style={{
-              width: 60,
-              height: 60,
-              borderRadius: SIZES.small + 2,
-              backgroundColor: COLORS.tertiary,
-              justifyContent: "center",
-              alignItems: "center",
-              top: SIZES.medium,
-              ...SHADOW.darkShadow,
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              paddingHorizontal: SIZES.base,
+              paddingVertical: SIZES.small,
             }}
           >
-            <Image
-              source={icons.cart}
-              resizeMode="contain"
-              style={{ width: 24, height: 24, tintColor: COLORS.white }}
-            />
-          </TouchableOpacity>
-        </View>
-      </TouchableOpacity>
+            <View style={{ flex: 1 }}>
+              <Text
+                style={{
+                  ...FONTS.subHeading,
+                  color: COLORS.secondary,
+                }}
+              >
+                {chair.price}
+              </Text>
+              <Text
+                style={{
+                  ...FONTS.body,
+                  color: COLORS.secondary,
+                }}
+              >
+                {chair.name}
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={{
+                width: 60,
+                height: 60,
+                borderRadius: SIZES.small + 2,
+                backgroundColor: COLORS.tertiary,
+                justifyContent: "center",
+                alignItems: "center",
+                top: SIZES.xlarge * 1.25,
+                ...SHADOW.darkShadow,
+              }}
+            >
+              <Image
+                source={icons.cart}
+                resizeMode="contain"
+                style={{ width: 24, height: 24, tintColor: COLORS.white }}
+              />
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+      </Animated.View>
     </View>
   );
 };
@@ -111,44 +141,63 @@ const ActiveSection = ({ title, activeSection, handlePress }) => {
   );
 };
 
-const HomeProducts = () => {
-  const [activeSection, setActiveSection] = React.useState("new");
+class HomeProducts extends React.Component {
+  state = {
+    activeSection: "new",
+    activeProduct: 0,
+  };
 
-  return (
-    <View style={{ width: "100%" }}>
-      <View
-        style={{
-          padding: SIZES.base,
-          flexDirection: "row",
-          justifyContent: "flex-start",
-          alignItems: "center",
-        }}
-      >
-        {["new", "popular", "sale"].map((section) => (
-          <ActiveSection
-            key={section}
-            activeSection={activeSection}
-            title={section}
-            handlePress={() => setActiveSection(section)}
+  handleViewableItemsChanged = ({ viewableItems }) => {
+    if (viewableItems.length > 0) {
+      this.setState({ activeProduct: viewableItems[0].index });
+    }
+  };
+
+  render() {
+    const { activeSection, activeProduct } = this.state;
+    return (
+      <View style={{ width: "100%" }}>
+        <View
+          style={{
+            padding: SIZES.base,
+            paddingBottom: 2,
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          {["new", "popular", "sale"].map((section) => (
+            <ActiveSection
+              key={section}
+              activeSection={activeSection}
+              title={section}
+              handlePress={() => this.setState({ activeSection: section })}
+            />
+          ))}
+        </View>
+
+        <View style={{ marginHorizontal: SIZES.large }}>
+          <FlatList
+            data={chairs}
+            renderItem={({ item, index }) => (
+              <ProductCard
+                index={index}
+                chair={item}
+                activeProduct={activeProduct}
+              />
+            )}
+            keyExtractor={(item) => item.id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            onViewableItemsChanged={this.handleViewableItemsChanged}
+            viewabilityConfig={{
+              itemVisiblePercentThreshold: 70,
+            }}
           />
-        ))}
+        </View>
       </View>
-
-      <View
-        style={{ marginHorizontal: SIZES.large, marginTop: SIZES.small / 2 }}
-      >
-        <FlatList
-          data={chairs}
-          renderItem={({ item, index }) => (
-            <ProductCard index={index} chair={item} />
-          )}
-          keyExtractor={(item) => item.id}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        />
-      </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 export default HomeProducts;
