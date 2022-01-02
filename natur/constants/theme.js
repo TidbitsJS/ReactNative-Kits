@@ -5,7 +5,7 @@ const COLORS = {
 
   white: "#FFFFFF",
   lightWhite: "#F7F1EA",
-  brownWhite: "#CAACAC",
+  brownWhite: "#F9F0E7",
 
   brownBG: "rgba(247, 241, 234, 0.35);",
 };

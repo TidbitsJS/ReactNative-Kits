@@ -12,7 +12,8 @@ import {
 import { chairs, COLORS, FONTS, icons, SIZES } from "../../constants";
 import { SHADOW } from "../../constants/theme";
 
-const ProductCard = ({ index, chair, activeProduct }) => {
+const ProductCard = ({ index, chair, activeProduct, navigation }) => {
+  const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
   const heightInc = React.useRef(new Animated.Value(276)).current;
 
   React.useEffect(() => {
@@ -44,7 +45,11 @@ const ProductCard = ({ index, chair, activeProduct }) => {
         marginBottom: SIZES.base,
       }}
     >
-      <Animated.View style={{ height: heightInc }}>
+      <AnimatedTouchable
+        activeOpacity={0.75}
+        style={{ height: heightInc }}
+        onPress={() => navigation.navigate("Product", { product: chair })}
+      >
         <ImageBackground
           source={chair.img}
           resizeMode="cover"
@@ -102,7 +107,7 @@ const ProductCard = ({ index, chair, activeProduct }) => {
             </TouchableOpacity>
           </View>
         </ImageBackground>
-      </Animated.View>
+      </AnimatedTouchable>
     </View>
   );
 };
@@ -184,6 +189,7 @@ class HomeProducts extends React.Component {
                 index={index}
                 chair={item}
                 activeProduct={activeProduct}
+                navigation={this.props.navigation}
               />
             )}
             keyExtractor={(item) => item.id}

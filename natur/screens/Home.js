@@ -6,7 +6,7 @@ import HomeProducts from "../components/home/HomeProducts";
 import { COLORS } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.brownBG }}>
       <FocusedStatusBar
@@ -16,7 +16,7 @@ const Home = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1 }}>
           <HomeHeader />
-          <HomeProducts />
+          <HomeProducts navigation={navigation} />
           <HomeCategories />
         </View>
       </ScrollView>
