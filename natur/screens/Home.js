@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import HomeHeader from "../components/home/HomeHeader";
+import HomeProducts from "../components/home/HomeProducts";
 import { COLORS } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
@@ -11,9 +12,12 @@ const Home = () => {
         backgroundColor={COLORS.brownBG}
         barStyle="dark-content"
       />
-      <View style={{ flex: 1 }}>
-        <HomeHeader />
-      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ flex: 1 }}>
+          <HomeHeader />
+          <HomeProducts />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

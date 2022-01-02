@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, TextInput, TouchableOpacity } from "react-native";
-import { COLORS, icons, images, SIZES } from "../../constants";
+import { COLORS, FONTS, icons, images, SIZES } from "../../constants";
 
 const HomeHeader = () => {
   return (
@@ -64,6 +64,7 @@ const HomeHeader = () => {
             flex: 1,
             color: COLORS.secondary,
             paddingHorizontal: SIZES.small,
+            ...FONTS.regular,
           }}
           placeholderTextColor={COLORS.primary}
         />
