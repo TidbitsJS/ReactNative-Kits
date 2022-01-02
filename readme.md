@@ -39,3 +39,45 @@ Design - [Figma File](https://www.figma.com/file/oVEA7P34UznIl2eauTEn4b/Lampshad
 Project - [LampShade](./lampshade)
 
 Live - [Expo](https://expo.dev/@tidbit/lampshade)
+
+#
+
+### Avocado Recipe Kit
+
+Description:
+
+- Recipe UI
+- Two screens
+  - Home
+  - Recipe details
+- Scroll effect
+
+![Avocado Recipe](./screenshots/avocadorecipe.png)
+
+Design - [Uplabs XD](https://www.uplabs.com/posts/avocado-recipe-app)
+
+Project - [Avocado Recipe](./avocado-recipe)
+
+Live - [Expo](https://expo.dev/@tidbit/avocado-recipe)
+
+#
+
+### Natur Kit
+
+Description:
+
+- Nature Furniture UI
+- Two screens
+  - Home
+  - Furniture details
+- Custom Flatlist animation
+
+![Natur](./screenshots/natur.png)
+
+Design - [Figma File](https://www.figma.com/file/OwXqpNe9lJIC7KI2reHLnm/NaturWoodenFurnitureApp?node-id=0%3A1)
+
+Project - [Natur](./natur)
+
+Live - [Expo](https://expo.dev/@tidbit/natur)
+
+#
