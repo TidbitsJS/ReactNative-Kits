@@ -54,7 +54,7 @@ const fruits = [
   {
     id: "fruit-8",
     name: "Acron",
-    icon: icons.acron,
+    icon: icons.acorn,
     bgColor: "#fae5d2",
     borderColor: "#8c5e2d",
   },
