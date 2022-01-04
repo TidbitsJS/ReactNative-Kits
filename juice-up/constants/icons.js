@@ -1,4 +1,4 @@
-import acron from "../assets/icons/acron.png";
+import acorn from "../assets/icons/acorn.png";
 import apple from "../assets/icons/apple.png";
 import avocado from "../assets/icons/avocado.png";
 import carrot from "../assets/icons/carrot.png";
@@ -14,7 +14,7 @@ import strawberry from "../assets/icons/strawberry.png";
 import user from "../assets/icons/user.png";
 
 export default {
-  acron,
+  acorn,
   apple,
   avocado,
   carrot,

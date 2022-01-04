@@ -1,6 +1,6 @@
-import blackberry from "../assets/images/blackberry.png";
-import original from "../assets/images/original.png";
-import tangerine from "../assets/images/tangerine.png";
+import blackberry from "../assets/images/blackberry.jpg";
+import original from "../assets/images/original.jpg";
+import tangerine from "../assets/images/tangerine.jpg";
 
 export default {
   blackberry,

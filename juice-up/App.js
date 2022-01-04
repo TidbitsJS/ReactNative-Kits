@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { useFonts } from "expo-font";
+import Tabs from "./navigation/Tabs";
+import Shop from "./screens/Shop";
 
-export default function App() {
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    border: "transparent",
+  },
+};
+
+const Stack = createStackNavigator();
+
+function App() {
+  const [loaded] = useFonts({
+    "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
+    "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Black": require("./assets/fonts/Roboto-Black.ttf"),
+    "RobotoCondensed-Regular": require("./assets/fonts/RobotoCondensed-Regular.ttf"),
+    "RobotoCondensed-Light": require("./assets/fonts/RobotoCondensed-Light.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer theme={theme}>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName="Tabs"
+      >
+        <Stack.Screen name="Tabs" component={Tabs} />
+        <Stack.Screen name="Shop" component={Shop} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
