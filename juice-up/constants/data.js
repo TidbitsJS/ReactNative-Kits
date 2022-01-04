@@ -32,10 +32,10 @@ const fruits = [
   },
   {
     id: "fruit-5",
-    name: "Carrot",
-    icon: icons.carrot,
-    bgColor: "#FFF4E6",
-    borderColor: "#fcac47",
+    name: "Acron",
+    icon: icons.acorn,
+    bgColor: "#fae5d2",
+    borderColor: "#8c5e2d",
   },
   {
     id: "fruit-6",
@@ -53,10 +53,10 @@ const fruits = [
   },
   {
     id: "fruit-8",
-    name: "Acron",
-    icon: icons.acorn,
-    bgColor: "#fae5d2",
-    borderColor: "#8c5e2d",
+    name: "Carrot",
+    icon: icons.carrot,
+    bgColor: "#FFF4E6",
+    borderColor: "#fcac47",
   },
 ];
 

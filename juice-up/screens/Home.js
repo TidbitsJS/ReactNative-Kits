@@ -7,7 +7,6 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS, fruits, icons, images, juices, SIZES } from "../constants";
@@ -127,14 +126,11 @@ const Home = () => {
               renderItem={({ item }) => (
                 <TouchableOpacity
                   style={{
-                    width: 270,
-                    height: 370,
+                    width: 250,
                     justifyContent: "flex-end",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     marginHorizontal: SIZES.small,
-                    padding: SIZES.medium,
                     borderRadius: SIZES.large,
-                    backgroundColor: item.bgColor,
                     shadowColor: item.bgColor,
                     shadowOffset: {
                       width: 0,
@@ -143,19 +139,15 @@ const Home = () => {
                     shadowOpacity: 0.85,
                     shadowRadius: 3.84,
                     elevation: 5,
+                    overflow: "hidden",
                   }}
-                  activeOpacity={0.45}
                 >
-                  <ImageBackground
+                  <Image
                     source={item.img}
                     resizeMode="cover"
                     style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      height: "88%",
+                      width: 250,
+                      height: 250,
                     }}
                     imageStyle={{ borderRadius: SIZES.large }}
                   />
@@ -164,6 +156,8 @@ const Home = () => {
                       flexDirection: "row",
                       justifyContent: "space-between",
                       alignItems: "center",
+                      padding: SIZES.medium,
+                      backgroundColor: item.bgColor,
                     }}
                   >
                     <View style={{ flex: 1, marginRight: SIZES.small }}>
@@ -185,11 +179,11 @@ const Home = () => {
                       >
                         <Text
                           style={{
-                            fontSize: SIZES.xlarge,
-                            fontFamily: "RobotoCondensed-Regular",
+                            fontSize: SIZES.large,
+                            fontFamily: "Roboto-Medium",
                             color: COLORS.white,
                             marginRight: 5,
-                            marginTop: 3,
+                            marginTop: 5,
                           }}
                         >
                           $

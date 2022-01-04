@@ -12,6 +12,7 @@ import plus from "../assets/icons/plus.png";
 import signal from "../assets/icons/signal.png";
 import strawberry from "../assets/icons/strawberry.png";
 import user from "../assets/icons/user.png";
+import arrow from "../assets/icons/arrow.png";
 
 export default {
   acorn,
@@ -28,4 +29,5 @@ export default {
   signal,
   strawberry,
   user,
+  arrow,
 };
