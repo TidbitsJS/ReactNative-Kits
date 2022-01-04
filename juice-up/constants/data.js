@@ -66,18 +66,21 @@ const juices = [
     name: "Apple Juice",
     img: images.tangerine,
     price: 8.65,
+    bgColor: "#F78C94",
   },
   {
     id: "juice-2",
     name: "Pinapple Juice",
     img: images.original,
     price: 9.4,
+    bgColor: "#F8CCE3",
   },
   {
     id: "juice-3",
     name: "Grapes Juice",
     img: images.blackberry,
     price: 10.5,
+    bgColor: "#EFD0EF",
   },
 ];
 

@@ -127,14 +127,24 @@ const Home = () => {
               renderItem={({ item }) => (
                 <TouchableOpacity
                   style={{
-                    width: 250,
-                    height: 350,
+                    width: 270,
+                    height: 370,
                     justifyContent: "flex-end",
                     alignItems: "center",
                     marginHorizontal: SIZES.small,
                     padding: SIZES.medium,
-                    borderRadius: SIZES.small,
+                    borderRadius: SIZES.large,
+                    backgroundColor: item.bgColor,
+                    shadowColor: item.bgColor,
+                    shadowOffset: {
+                      width: 0,
+                      height: 2,
+                    },
+                    shadowOpacity: 0.85,
+                    shadowRadius: 3.84,
+                    elevation: 5,
                   }}
+                  activeOpacity={0.45}
                 >
                   <ImageBackground
                     source={item.img}
@@ -145,8 +155,9 @@ const Home = () => {
                       left: 0,
                       right: 0,
                       bottom: 0,
+                      height: "88%",
                     }}
-                    imageStyle={{ borderRadius: SIZES.small }}
+                    imageStyle={{ borderRadius: SIZES.large }}
                   />
                   <View
                     style={{
@@ -159,7 +170,7 @@ const Home = () => {
                       <Text
                         style={{
                           fontSize: SIZES.xlarge,
-                          fontFamily: "Roboto-Bold",
+                          fontFamily: "RobotoCondensed-Regular",
                           color: COLORS.white,
                         }}
                       >
@@ -169,15 +180,16 @@ const Home = () => {
                         style={{
                           flexDirection: "row",
                           justifyContent: "flex-start",
-                          alignItems: "center",
+                          alignItems: "flex-start",
                         }}
                       >
                         <Text
                           style={{
                             fontSize: SIZES.xlarge,
-                            fontFamily: "Roboto-Black",
+                            fontFamily: "RobotoCondensed-Regular",
                             color: COLORS.white,
                             marginRight: 5,
+                            marginTop: 3,
                           }}
                         >
                           $
@@ -185,7 +197,7 @@ const Home = () => {
                         <Text
                           style={{
                             fontSize: SIZES.xlarge * 1.5,
-                            fontFamily: "Roboto-Black",
+                            fontFamily: "Roboto-Bold",
                             color: COLORS.white,
                           }}
                         >
@@ -209,7 +221,7 @@ const Home = () => {
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
-                marginVertical: SIZES.medium,
+                paddingVertical: SIZES.xlarge,
               }}
             />
           </View>
