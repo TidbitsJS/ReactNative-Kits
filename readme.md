@@ -81,3 +81,22 @@ Project - [Natur](./natur)
 Live - [Expo](https://expo.dev/@tidbit/natur)
 
 #
+
+### Juice Shop Kit
+
+Description:
+
+- Juiceup UI
+- Two screens
+  - Home
+  - Juice details
+
+![JuiceUp](./screenshots/juiceup.png)
+
+Design - [Dribble](https://dribbble.com/shots/10274668-Juiceup-App)
+
+Project - [juiceup](./juice-up)
+
+Live - [Expo](https://expo.dev/@tidbit/juice-up)
+
+#
