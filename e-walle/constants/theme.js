@@ -30,7 +30,7 @@ const FONTS = {
     fontFamily: "AvenirBook",
   },
   p: {
-    fontSize: SIZES.small - 2,
+    fontSize: SIZES.small,
     lineHeight: 15.43,
     fontFamily: "AvenirRoman",
   },

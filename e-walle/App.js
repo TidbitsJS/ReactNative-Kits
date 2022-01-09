@@ -3,6 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { FONTS } from "./constants";
+import Welcome from "./screens/Welcome";
+import Home from "./screens/Home";
 
 const theme = {
   ...DefaultTheme,
@@ -26,11 +28,17 @@ function App() {
   }
 
   return (
-    <View>
-      <Text style={{ ...FONTS.h1 }}>
-        Open up App.js to start working on your app!
-      </Text>
-    </View>
+    <NavigationContainer theme={theme}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName="Welcome"
+      >
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

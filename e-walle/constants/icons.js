@@ -16,6 +16,7 @@ import send from "../assets/icons/send.png";
 import union from "../assets/icons/union.png";
 import wallet from "../assets/icons/wallet.png";
 import plus from "../assets/icons/plus.png";
+import arrow from "../assets/icons/arrow.png";
 
 export default {
   airplane,
@@ -36,4 +37,5 @@ export default {
   union,
   wallet,
   plus,
+  arrow,
 };
