@@ -13,7 +13,7 @@ import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 
 const windowHeight = Dimensions.get("window").height;
 
-const Welcome = () => {
+const Welcome = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -152,6 +152,7 @@ const Welcome = () => {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                onPress={() => navigation.navigate("Home")}
               >
                 <Text
                   style={{
