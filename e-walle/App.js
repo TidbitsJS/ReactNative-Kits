@@ -18,9 +18,10 @@ const Stack = createStackNavigator();
 
 function App() {
   const [loaded] = useFonts({
-    AvenirBlack: require("./assets/fonts/AvenirBlack.otf"),
-    AvenirBook: require("./assets/fonts/AvenirBook.otf"),
-    AvenirRoman: require("./assets/fonts/AvenirRoman.otf"),
+    AvenirNextBold: require("./assets/fonts/AvenirNextBold.otf"),
+    AvenirNextDemi: require("./assets/fonts/AvenirNextDemi.otf"),
+    AvenirNextMedium: require("./assets/fonts/AvenirNextMedium.otf"),
+    AvenirNextRegular: require("./assets/fonts/AvenirNextRegular.otf"),
   });
 
   if (!loaded) {

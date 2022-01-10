@@ -66,7 +66,7 @@ const Home = () => {
           <Text
             style={{
               ...FONTS.h1,
-              fontFamily: "AvenirBook",
+              fontFamily: "AvenirNextDemi",
               color: COLORS.primary,
             }}
           >
@@ -88,7 +88,7 @@ const Home = () => {
               <Text
                 style={{
                   ...FONTS.h1,
-                  fontFamily: "AvenirBook",
+                  fontFamily: "AvenirNextMedium",
                   color: COLORS.black,
                 }}
               >

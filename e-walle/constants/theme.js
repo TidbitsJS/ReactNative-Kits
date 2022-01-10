@@ -22,17 +22,17 @@ const FONTS = {
   h1: {
     fontSize: SIZES.xlarge,
     lineHeight: 37.03,
-    fontFamily: "AvenirBlack",
+    fontFamily: "AvenirNextBold",
   },
   h2: {
     fontSize: SIZES.medium,
     lineHeight: 24.69,
-    fontFamily: "AvenirBook",
+    fontFamily: "AvenirNextMedium",
   },
   p: {
     fontSize: SIZES.small,
     lineHeight: 15.43,
-    fontFamily: "AvenirRoman",
+    fontFamily: "AvenirNextRegular",
   },
 };
 
