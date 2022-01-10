@@ -17,6 +17,7 @@ import union from "../assets/icons/union.png";
 import wallet from "../assets/icons/wallet.png";
 import plus from "../assets/icons/plus.png";
 import arrow from "../assets/icons/arrow.png";
+import filter from "../assets/icons/filter.png";
 
 export default {
   airplane,
@@ -38,4 +39,5 @@ export default {
   wallet,
   plus,
   arrow,
+  filter,
 };
