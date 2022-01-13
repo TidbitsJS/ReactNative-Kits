@@ -43,7 +43,8 @@ const HomeHeader = () => {
         <TouchableOpacity
           style={{
             justifyContent: "flex-start",
-            alignItems: "center",
+            alignItems: "flex-start",
+            flex: 0.5,
           }}
         >
           <Image
@@ -58,7 +59,6 @@ const HomeHeader = () => {
             flex: 1,
             justifyContent: "center",
             alignItems: "center",
-            paddingLeft: SIZES.medium,
           }}
         >
           <Text
@@ -73,6 +73,7 @@ const HomeHeader = () => {
 
         <View
           style={{
+            flex: 0.6,
             flexDirection: "row",
             justifyContent: "flex-end",
             alignItems: "center",

@@ -23,56 +23,60 @@ const Home = () => {
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flex: 1 }}>
-          <HomeHeader />
+      <View style={{ flex: 1, width: "100%" }}>
+        <FlatList
+          data={products}
+          renderItem={({ item }) => <HomeProductCard product={item} />}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          numColumns={2}
+          contentContainerStyle={{
+            paddingBottom: SIZES.base,
+          }}
+          ListHeaderComponent={() => (
+            <React.Fragment>
+              <HomeHeader />
 
-          <View style={{ padding: SIZES.base }}>
-            <FlatList
-              data={filters}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  style={{
-                    minWidth: 80,
-                    height: 36,
-                    marginRight: SIZES.base,
-                    backgroundColor:
-                      activeFilter === item ? COLORS.primary : null,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderRadius: SIZES.small / 2,
-                  }}
-                  onPress={() => setActiveFilter(item)}
-                >
-                  <Text
-                    style={{
-                      fontFamily: "AvenirRoman",
-                      fontSize: 14,
-                      color:
-                        activeFilter === item ? COLORS.white : COLORS.primary,
-                    }}
-                  >
-                    {item}
-                  </Text>
-                </TouchableOpacity>
-              )}
-              keyExtractor={(item) => item}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-            />
-          </View>
-
-          <View style={{ width: "100%", paddingHorizontal: SIZES.small / 2 }}>
-            <FlatList
-              data={products}
-              renderItem={({ item }) => <HomeProductCard product={item} />}
-              keyExtractor={(item) => item.id}
-              showsVerticalScrollIndicator={false}
-              numColumns={2}
-            />
-          </View>
-        </View>
-      </ScrollView>
+              <View style={{ padding: SIZES.base }}>
+                <FlatList
+                  data={filters}
+                  renderItem={({ item }) => (
+                    <TouchableOpacity
+                      style={{
+                        minWidth: 80,
+                        height: 36,
+                        marginRight: SIZES.base,
+                        backgroundColor:
+                          activeFilter === item ? COLORS.primary : null,
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: SIZES.small / 2,
+                      }}
+                      onPress={() => setActiveFilter(item)}
+                    >
+                      <Text
+                        style={{
+                          fontFamily: "AvenirRoman",
+                          fontSize: 14,
+                          color:
+                            activeFilter === item
+                              ? COLORS.white
+                              : COLORS.primary,
+                        }}
+                      >
+                        {item}
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+                  keyExtractor={(item) => item}
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                />
+              </View>
+            </React.Fragment>
+          )}
+        />
+      </View>
     </SafeAreaView>
   );
 };

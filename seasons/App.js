@@ -23,6 +23,7 @@ function App() {
     HisyamFacelift: require("./assets/fonts/HisyamFacelift.otf"),
     ProductSans: require("./assets/fonts/ProductSans.ttf"),
     SFProSemibold: require("./assets/fonts/SFProSemibold.ttf"),
+    PrataRegular: require("./assets/fonts/PrataRegular.ttf"),
   });
 
   if (!loaded) return null;
