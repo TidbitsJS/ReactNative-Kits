@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { COLORS, icons, SIZES } from "../constants";
 
-const HomeProductCard = ({ product }) => {
+const HomeProductCard = ({ product, navigation }) => {
   return (
     <View
       style={{
@@ -12,7 +12,14 @@ const HomeProductCard = ({ product }) => {
         borderRadius: SIZES.small / 2,
       }}
     >
-      <TouchableOpacity style={{ width: "100%", height: 215 }}>
+      <TouchableOpacity
+        style={{ width: "100%", height: 215 }}
+        onPress={() =>
+          navigation.navigate("Product", {
+            product,
+          })
+        }
+      >
         <Image
           source={product.imgUrl}
           resizeMode="cover"

@@ -6,7 +6,6 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import HomeHeader from "../components/HomeHeader";
 import HomeProductCard from "../components/HomeProductCard";
 import { COLORS, products, SIZES } from "../constants";
@@ -14,7 +13,7 @@ import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const filters = ["Dress", "Pants", "Blazers", "Jackets"];
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [activeFilter, setActiveFilter] = React.useState(filters[0]);
 
   return (
@@ -26,7 +25,9 @@ const Home = () => {
       <View style={{ flex: 1, width: "100%" }}>
         <FlatList
           data={products}
-          renderItem={({ item }) => <HomeProductCard product={item} />}
+          renderItem={({ item }) => (
+            <HomeProductCard product={item} navigation={navigation} />
+          )}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
           numColumns={2}
