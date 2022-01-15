@@ -1,10 +1,12 @@
 import React from "react";
-import { View, SafeAreaView, Image } from "react-native";
+import { View, SafeAreaView, Image, Dimensions } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import ProductDetails from "../components/ProductDetails";
 import ProductHeader from "../components/ProductHeader";
 import { COLORS } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
+
+const windowHeight = Dimensions.get("window").height;
 
 const Product = ({ route, navigation }) => {
   const { product } = route.params;
@@ -22,7 +24,7 @@ const Product = ({ route, navigation }) => {
             <Image
               source={product.imgUrl}
               resizeMode="cover"
-              style={{ width: "100%", height: 400 }}
+              style={{ width: "100%", height: windowHeight / 2 }}
             />
           </View>
 
