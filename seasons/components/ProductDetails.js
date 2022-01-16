@@ -88,13 +88,72 @@ const ProductDetails = ({ product }) => {
     >
       <View
         style={{
+          position: "absolute",
+          width: "100%",
+          height: windowHeight / 2.2,
+          justifyContent: "flex-end",
+          alignItems: "center",
+        }}
+      >
+        <View
+          style={{
+            position: "absolute",
+            zIndex: 2,
+            width: "75%",
+            height: "75%",
+            backgroundColor: COLORS.lightBlue,
+            opacity: 0.5,
+            borderTopLeftRadius: SIZES.xxlarge,
+            borderBottomLeftRadius: SIZES.xxlarge,
+            shadowColor: COLORS.lightBlue,
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowRadius: SIZES.small,
+            shadowOpacity: 1,
+            elevation: 2,
+          }}
+        />
+        <View
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            width: "85%",
+            height: "65%",
+            backgroundColor: COLORS.lightOrange,
+            opacity: 0.5,
+            borderTopLeftRadius: SIZES.xxlarge,
+            borderBottomLeftRadius: SIZES.xxlarge,
+            shadowColor: COLORS.lightOrange,
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowRadius: SIZES.small,
+            shadowOpacity: 1,
+            elevation: 2,
+          }}
+        />
+      </View>
+      <View
+        style={{
           width: "80%",
-          minHeight: windowHeight / 2.2,
+          zIndex: 5,
+          minHeight: windowHeight / 2.25,
           backgroundColor: COLORS.white,
           borderTopLeftRadius: SIZES.xxlarge,
           borderBottomLeftRadius: SIZES.xxlarge,
           padding: SIZES.large,
           justifyContent: "space-around",
+          elevation: 5,
+          shadowColor: COLORS.lightBlue,
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowRadius: SIZES.small,
+          shadowOpacity: 1,
         }}
       >
         <View>
