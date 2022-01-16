@@ -1,9 +1,9 @@
 import React from "react";
-import { View, SafeAreaView, Image, Dimensions } from "react-native";
+import { View, SafeAreaView, Image, Dimensions, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import ProductDetails from "../components/ProductDetails";
 import ProductHeader from "../components/ProductHeader";
-import { COLORS } from "../constants";
+import { COLORS, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const windowHeight = Dimensions.get("window").height;
@@ -19,7 +19,7 @@ const Product = ({ route, navigation }) => {
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, backgroundColor: product.bgColor }}>
-          <ProductHeader navigation={navigation} />
+          <ProductHeader navigation={navigation} name={product.name} />
           <View>
             <Image
               source={product.imgUrl}

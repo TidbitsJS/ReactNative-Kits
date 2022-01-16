@@ -21,8 +21,6 @@ function App() {
     AvenirMedium: require("./assets/fonts/AvenirMedium.ttf"),
     AvenirRoman: require("./assets/fonts/AvenirRoman.ttf"),
     HisyamFacelift: require("./assets/fonts/HisyamFacelift.otf"),
-    ProductSans: require("./assets/fonts/ProductSans.ttf"),
-    SFProSemibold: require("./assets/fonts/SFProSemibold.ttf"),
     PrataRegular: require("./assets/fonts/PrataRegular.ttf"),
   });
 

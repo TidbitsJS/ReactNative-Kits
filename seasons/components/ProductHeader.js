@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { COLORS, icons, SIZES } from "../constants";
 
-const ProductHeader = ({ navigation }) => {
+const ProductHeader = ({ navigation, name }) => {
   return (
     <View
       style={{
@@ -19,13 +19,31 @@ const ProductHeader = ({ navigation }) => {
           alignItems: "center",
         }}
       >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image
-            source={icons.back}
-            style={{ width: 17, height: 14 }}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Image
+              source={icons.back}
+              style={{ width: 17, height: 14 }}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <Text
+            style={{
+              fontFamily: "AvenirRoman",
+              fontSize: 17,
+              color: COLORS.primary,
+              marginLeft: SIZES.small,
+            }}
+          >
+            {name}
+          </Text>
+        </View>
         <View
           style={{
             flexDirection: "row",
