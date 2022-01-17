@@ -100,3 +100,41 @@ Project - [juiceup](./juice-up)
 Live - [Expo](https://expo.dev/@tidbit/juice-up)
 
 #
+
+### eWalle Kit
+
+Description:
+
+- Wallet UI
+- Two screens
+  - Sign in
+  - Home
+
+![eWalle](./screenshots/eWalle.png)
+
+Design - [Figma File](https://www.figma.com/file/ZkZ1GC4gmJRZRFvA4ywmUg/eWalle?node-id=0%3A1)
+
+Project - [eWalle](./e-walle)
+
+Live - [Expo](https://expo.dev/@tidbit/e-walle)
+
+#
+
+### Seasons Kit
+
+Description:
+
+- Cloth shopping UI
+- Two screens
+  - Home
+  - Product details
+
+![Seasons](./screenshots/seasons.png)
+
+Design - [Figma File](https://www.figma.com/file/76ZMHPijYCdywcaIsBwxbH/Seasons)
+
+Project - [Seasons](./seasons)
+
+Live - [Expo](https://expo.dev/@tidbit/seasons)
+
+#
