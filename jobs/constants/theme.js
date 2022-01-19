@@ -4,7 +4,9 @@ const COLORS = {
   tertiary: "#FF7754",
 
   gray: "#83829A",
-  lightWhite: "#E6E4E6",
+  lightWhite: "#FAFAFC",
+
+  white: "#F2F3F7",
 };
 
 const SIZES = {
@@ -16,4 +18,27 @@ const SIZES = {
   xxLarge: 32,
 };
 
-export { COLORS, SIZES };
+const SHADOWS = {
+  small: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
+  },
+  medium: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 5.84,
+    elevation: 5,
+  },
+};
+
+export { COLORS, SIZES, SHADOWS };

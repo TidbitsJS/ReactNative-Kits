@@ -9,6 +9,9 @@ import spotify from "../assets/icons/spotify.png";
 import twitch from "../assets/icons/twitch.png";
 import twitter from "../assets/icons/twitter.png";
 import wattpad from "../assets/icons/wattpad.png";
+import heart from "../assets/icons/heart.png";
+import menu from "../assets/icons/menu.png";
+import search from "../assets/icons/search.png";
 
 export default {
   amazon,
@@ -22,4 +25,7 @@ export default {
   twitch,
   twitter,
   wattpad,
+  heart,
+  menu,
+  search,
 };
