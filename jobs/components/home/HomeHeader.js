@@ -7,7 +7,7 @@ import {
   TextInput,
   FlatList,
 } from "react-native";
-import { COLORS, SIZES, images, icons } from "../constants";
+import { COLORS, SIZES, images, icons } from "../../constants";
 
 const jobTypes = ["Product", "Design", "Development"];
 
@@ -132,8 +132,8 @@ function HomeHeader() {
             source={icons.search}
             resizeMode="contain"
             style={{
-              width: "55%",
-              height: "55%",
+              width: "50%",
+              height: "50%",
               tintColor: COLORS.white,
             }}
           />
