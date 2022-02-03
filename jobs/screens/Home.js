@@ -1,8 +1,11 @@
 import React from "react";
 import { View, ScrollView, SafeAreaView } from "react-native";
-import HomeHeader from "../components/home/HomeHeader";
-import HomePopularJobs from "../components/home/HomePopularJobs";
+
 import { COLORS, SIZES } from "../constants";
+
+import HomeHeader from "../components/home/HomeHeader";
+import HomeJobList from "../components/home/HomeJobList";
+import HomePopularJobs from "../components/home/HomePopularJobs";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 function Home() {
@@ -16,6 +19,7 @@ function Home() {
         <View style={{ flex: 1, padding: SIZES.medium }}>
           <HomeHeader />
           <HomePopularJobs />
+          <HomeJobList />
         </View>
       </ScrollView>
     </SafeAreaView>
