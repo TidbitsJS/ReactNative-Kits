@@ -91,7 +91,7 @@ const NearbyJob = ({ job }) => {
   );
 };
 
-const HomeJobList = () => {
+const HomeJobList = ({ navigation }) => {
   return (
     <View style={{ marginTop: SIZES.xLarge }}>
       <View
@@ -111,7 +111,7 @@ const HomeJobList = () => {
         >
           Nearby jobs
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Jobs")}>
           <Text
             style={{
               fontSize: SIZES.medium,

@@ -8,7 +8,7 @@ import HomeJobList from "../components/home/HomeJobList";
 import HomePopularJobs from "../components/home/HomePopularJobs";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-function Home() {
+function Home({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <FocusedStatusBar
@@ -18,8 +18,8 @@ function Home() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, padding: SIZES.medium }}>
           <HomeHeader />
-          <HomePopularJobs />
-          <HomeJobList />
+          <HomePopularJobs navigation={navigation} />
+          <HomeJobList navigation={navigation} />
         </View>
       </ScrollView>
     </SafeAreaView>

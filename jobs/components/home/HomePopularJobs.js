@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, FlatList, Image } from "react-native";
 import { COLORS, SIZES, popular_jobs, icons, SHADOWS } from "../../constants";
 
-function HomePopularJobs() {
+function HomePopularJobs({ navigation }) {
   const [selectedJob, setSelectedJob] = React.useState("popular_job01");
   const [favoriteJobs, setFavoriteJobs] = React.useState(["popular_job01"]);
 
@@ -24,7 +24,7 @@ function HomePopularJobs() {
         >
           Popular Job
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Jobs")}>
           <Text
             style={{
               fontSize: SIZES.medium,

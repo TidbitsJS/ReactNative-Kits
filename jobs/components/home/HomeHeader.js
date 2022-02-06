@@ -38,7 +38,7 @@ function HomeHeader() {
             style={{
               width: "60%",
               height: "60%",
-              tintColor: COLORS.secondary,
+              tintColor: COLORS.primary,
             }}
           />
         </TouchableOpacity>
