@@ -25,7 +25,7 @@ function SearchBtn({ name, activeSearchType, onHandleSearchType }) {
         style={{
           fontFamily: "DMMedium",
           fontSize: SIZES.small,
-          color: name === activeSearchType ? "#C3BFCC" : "#D0D0DB",
+          color: name === activeSearchType ? "#C3BFCC" : "#AAA9B8",
         }}
       >
         {name}
@@ -116,7 +116,7 @@ function JobsHeader() {
         </TouchableOpacity>
       </View>
 
-      <View style={{ marginTop: SIZES.large }}>
+      <View style={{ marginTop: SIZES.small }}>
         <FlatList
           data={searchTypes}
           horizontal

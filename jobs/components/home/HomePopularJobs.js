@@ -80,8 +80,8 @@ function HomePopularJobs({ navigation }) {
                     source={item.url}
                     resizeMode="contain"
                     style={{
-                      width: "75%",
-                      height: "75%",
+                      width: "70%",
+                      height: "70%",
                     }}
                   />
                 </TouchableOpacity>

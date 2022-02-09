@@ -9,6 +9,7 @@ const popular_jobs = [
     salary: "$8k",
     type: "Full Time",
     location: "Tokyo, Japan",
+    time: "24h",
   },
   {
     id: "popular_job02",
@@ -18,6 +19,7 @@ const popular_jobs = [
     salary: "$5k",
     type: "Full Time",
     location: "New York, USA",
+    time: "4d",
   },
   {
     id: "popular_job03",
@@ -27,6 +29,7 @@ const popular_jobs = [
     salary: "$8k",
     type: "Full Time",
     location: "New York, USA",
+    time: "6d",
   },
   {
     id: "popular_job04",
@@ -36,6 +39,7 @@ const popular_jobs = [
     salary: "$8k",
     type: "Full Time",
     location: "London, UK",
+    time: "1w",
   },
   {
     id: "popular_job05",
@@ -45,6 +49,7 @@ const popular_jobs = [
     salary: "$12k",
     type: "Full Time",
     location: "California, USA",
+    time: "1w",
   },
   {
     id: "popular_job06",
@@ -54,6 +59,7 @@ const popular_jobs = [
     salary: "$6k",
     type: "Part Time",
     location: "Berlin, Germany",
+    time: "1w",
   },
   {
     id: "popular_job07",
@@ -63,6 +69,7 @@ const popular_jobs = [
     salary: "$18k",
     type: "Full Time",
     location: "Silicon Valley, USA",
+    time: "2w",
   },
   {
     id: "popular_job08",
@@ -72,6 +79,7 @@ const popular_jobs = [
     salary: "$5k",
     type: "Internship",
     location: "New York, USA",
+    time: "2w",
   },
   {
     id: "popular_job09",
@@ -81,6 +89,7 @@ const popular_jobs = [
     salary: "$8k",
     type: "Full Time",
     location: "Tokyo, Japan",
+    time: "2w",
   },
   {
     id: "popular_job10",
@@ -90,6 +99,7 @@ const popular_jobs = [
     salary: "$11k",
     type: "Full Time",
     location: "Paris, France",
+    time: "2w",
   },
   {
     id: "popular_job11",
@@ -99,6 +109,7 @@ const popular_jobs = [
     salary: "$15k",
     type: "Full Time",
     location: "Dubai, UAE",
+    time: "3w",
   },
   {
     id: "popular_job12",
@@ -108,6 +119,7 @@ const popular_jobs = [
     salary: "$20k",
     type: "Full Time",
     location: "San Francisco, USA",
+    time: "3w",
   },
 ];
 
