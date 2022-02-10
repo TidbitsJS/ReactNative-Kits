@@ -35,7 +35,7 @@ const JobsList = ({ job, activeJob, handlePress }) => {
         <Image source={job.url} style={{ width: "70%", height: "70%" }} />
       </View>
 
-      <View style={{ flex: 1, marginHorizontal: SIZES.small + 2 }}>
+      <View style={{ flex: 1, marginHorizontal: SIZES.medium }}>
         <Text
           style={{
             fontSize: SIZES.medium - 2,
@@ -51,6 +51,7 @@ const JobsList = ({ job, activeJob, handlePress }) => {
             color: activeJob.id === job.id ? "#F9F8F9" : COLORS.primary,
             fontFamily: "DMBold",
           }}
+          numberOfLines={1}
         >
           {job.job}
         </Text>

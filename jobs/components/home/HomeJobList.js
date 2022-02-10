@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { COLORS, popular_jobs, SHADOWS, SIZES } from "../../constants";
 
-const NearbyJob = ({ job }) => {
+const NearbyJob = ({ job, handleNavigate }) => {
   return (
     <TouchableOpacity
       style={{
@@ -18,6 +19,7 @@ const NearbyJob = ({ job }) => {
         ...SHADOWS.medium,
         shadowColor: COLORS.white,
       }}
+      onPress={handleNavigate}
     >
       <View
         style={{
@@ -59,6 +61,7 @@ const NearbyJob = ({ job }) => {
               fontFamily: "DMBold",
               color: COLORS.primary,
             }}
+            numberOfLines={1}
           >
             {job.job}
           </Text>
@@ -91,7 +94,9 @@ const NearbyJob = ({ job }) => {
   );
 };
 
-const HomeJobList = ({ navigation }) => {
+const HomeJobList = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={{ marginTop: SIZES.xLarge }}>
       <View
@@ -126,7 +131,11 @@ const HomeJobList = ({ navigation }) => {
 
       <View style={{ marginTop: SIZES.medium }}>
         {popular_jobs.slice(5, 10).map((job, index) => (
-          <NearbyJob job={job} key={`nearby-job-${index}`} />
+          <NearbyJob
+            job={job}
+            key={`nearby-job-${index}`}
+            handleNavigate={() => navigation.navigate("JobDetails", { job })}
+          />
         ))}
       </View>
     </View>

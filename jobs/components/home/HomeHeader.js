@@ -140,10 +140,10 @@ function HomeHeader() {
         </TouchableOpacity>
       </View>
 
-      <View style={{ width: "100%", marginTop: SIZES.small }}>
+      <View style={{ width: "100%", marginTop: SIZES.medium }}>
         <FlatList
           data={jobTypes}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <TouchableOpacity
               style={{
                 paddingVertical: SIZES.small / 2,
@@ -152,7 +152,7 @@ function HomeHeader() {
                 borderWidth: 1,
                 borderColor:
                   activeJobType === item ? COLORS.secondary : COLORS.gray2,
-                margin: SIZES.small / 2,
+                marginRight: index === jobTypes.length - 1 ? 0 : SIZES.small,
               }}
               onPress={() => setActiveJobType(item)}
             >

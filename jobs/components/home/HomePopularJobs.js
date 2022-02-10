@@ -54,6 +54,7 @@ function HomePopularJobs({ navigation }) {
               shadowColor: COLORS.white,
             }}
             onPress={() => {
+              navigation.navigate("JobDetails", { job: item });
               setSelectedJob(item.id);
             }}
           >
@@ -129,6 +130,7 @@ function HomePopularJobs({ navigation }) {
                   color:
                     selectedJob === item.id ? COLORS.white : COLORS.primary,
                 }}
+                numberOfLines={1}
               >
                 {item.job}
               </Text>
