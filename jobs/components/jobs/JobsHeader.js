@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, FlatList } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { COLORS, SIZES, icons, SHADOWS } from "../../constants";
+import { COLORS, SIZES, icons } from "../../constants";
 import Filters from "../Filters";
 
 const searchTypes = ["Most Relevant", "Most Recent", "Most Popular"];
@@ -51,7 +51,7 @@ function JobsHeader() {
               color: COLORS.primary,
             }}
           >
-            UI/UX Design
+            All jobs
           </Text>
           <Text
             style={{

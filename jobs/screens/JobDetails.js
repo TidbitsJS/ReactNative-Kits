@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DetailsFooter from "../components/details/DetailsFooter";
 import DetailsHeader from "../components/details/DetailsHeader";
+import DetailsSection from "../components/details/DetailsSection";
 import Filters from "../components/Filters";
 
 import { COLORS, icons, SIZES } from "../constants";
@@ -46,31 +47,80 @@ const JobDetails = ({ route, navigation }) => {
         barStyle="dark-content"
       />
 
-      <View style={{ flex: 1, padding: SIZES.medium }}>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
-          <IconItem
-            iconUrl={icons.left}
-            handleNavigate={() => navigation.goBack()}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <IconItem
+              iconUrl={icons.left}
+              handleNavigate={() => navigation.goBack()}
+            />
+            <IconItem iconUrl={icons.share} />
+          </View>
+
+          <DetailsHeader
+            url={job.url}
+            jobtype={job.job}
+            name={job.name}
+            location={job.location}
           />
-          <IconItem iconUrl={icons.share} />
-        </View>
 
-        <DetailsHeader
-          url={job.url}
-          jobtype={job.job}
-          name={job.name}
-          location={job.location}
-        />
+          <View
+            style={{ marginTop: SIZES.small, marginBottom: SIZES.small / 2 }}
+          >
+            <Filters filterTypes={searchTypes} />
+          </View>
 
-        <View>
-          <Filters filterTypes={searchTypes} />
+          <DetailsSection
+            headText="Qualifications"
+            bodyData={job.qualifications}
+          />
+
+          <View
+            style={{
+              marginTop: SIZES.large,
+              backgroundColor: "#FFF",
+              borderRadius: SIZES.medium,
+              padding: SIZES.medium,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: SIZES.large,
+                color: COLORS.primary,
+                fontFamily: "DMBold",
+              }}
+            >
+              About the job:
+            </Text>
+
+            <View style={{ marginVertical: SIZES.small }}>
+              {job.aboutJob.map((about, index) => (
+                <Text
+                  style={{
+                    fontSize: SIZES.medium - 2,
+                    color: COLORS.gray,
+                    fontFamily: "DMRegular",
+                    marginVertical: SIZES.small / 1.25,
+                  }}
+                  key={job.name + index}
+                >
+                  {about}
+                </Text>
+              ))}
+            </View>
+          </View>
+
+          <DetailsSection
+            headText="Responsibilities"
+            bodyData={job.responsibilities}
+          />
         </View>
-      </View>
+      </ScrollView>
 
       <DetailsFooter />
     </SafeAreaView>
