@@ -1,8 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { COLORS, icons, SHADOWS, SIZES } from "../../constants";
 
 const JobsList = ({ job, activeJob, handlePress }) => {
+  const navigation = useNavigation();
+
   return (
     <TouchableOpacity
       style={{
@@ -14,7 +17,10 @@ const JobsList = ({ job, activeJob, handlePress }) => {
         ...SHADOWS.medium,
         shadowColor: "#F6F5FA",
       }}
-      onPress={handlePress}
+      onPress={() => {
+        navigation.navigate("JobDetails", { job });
+        handlePress();
+      }}
     >
       <View
         style={{
@@ -74,8 +80,8 @@ const JobsList = ({ job, activeJob, handlePress }) => {
         <Image
           source={icons.heartOutline}
           style={{
-            width: 21,
-            height: 21,
+            width: 18,
+            height: 18,
             tintColor: activeJob.id === job.id ? "#F97657" : "#C0BFCA",
           }}
         />

@@ -1,8 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
+
 import Home from "./screens/Home";
 import Jobs from "./screens/Jobs";
+import JobDetails from "./screens/JobDetails";
 
 const theme = {
   ...DefaultTheme,
@@ -33,6 +35,7 @@ function App() {
       >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Jobs" component={Jobs} />
+        <Stack.Screen name="JobDetails" component={JobDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
