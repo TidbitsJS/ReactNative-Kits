@@ -129,7 +129,7 @@ Description:
   - Home
   - Product details
 
-![Seasons](./screenshots/seasons.png)
+![Seasons](./screenshots/seasons.jpg)
 
 Design - [Figma File](https://www.figma.com/file/76ZMHPijYCdywcaIsBwxbH/Seasons)
 
@@ -138,3 +138,21 @@ Project - [Seasons](./seasons)
 Live - [Expo](https://expo.dev/@tidbit/seasons)
 
 #
+
+### Jobs Kit
+
+Description:
+
+- Job search UI
+- Three screens
+  - Home
+  - Job List
+  - Job details
+
+![jobs](./screenshots/jobs.jpg)
+
+Design - [Dribble](https://dribbble.com/shots/11867493-Job-finder-Mobile-UI-Job-list)
+
+Project - [Jobs](./jobs)
+
+Live - [Expo](https://expo.dev/@tidbit/jobs)
