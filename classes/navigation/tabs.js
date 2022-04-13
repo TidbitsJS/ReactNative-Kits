@@ -2,7 +2,7 @@ import React from "react";
 import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { images } from "../constants";
+import { COLORS, images } from "../constants";
 import Home from "../screens/Home";
 
 const Tab = createBottomTabNavigator();
@@ -15,10 +15,10 @@ const Tabs = () => {
         tabBarShowLabel: false,
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#fff",
+          backgroundColor: COLORS.white,
         },
         tabBarIcon: ({ focused }) => {
-          const tintColor = focused ? "#183591" : "#ABABB6";
+          const tintColor = focused ? COLORS.mediumBlue : COLORS.gray;
 
           switch (route.name) {
             case "Home":
