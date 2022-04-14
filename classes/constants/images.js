@@ -12,6 +12,8 @@ import user from "../assets/icons/user.png";
 import videos from "../assets/icons/videos.png";
 import violin from "../assets/icons/violin.png";
 
+import kemal from "../assets/kemal.jpg";
+
 export default {
   art,
   camera,
@@ -26,4 +28,6 @@ export default {
   user,
   videos,
   violin,
+
+  kemal,
 };
