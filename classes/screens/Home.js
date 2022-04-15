@@ -5,10 +5,59 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  FlatList,
 } from "react-native";
-import { COLORS, FONTFAMILY, images, SHADOW } from "../constants";
+import { COLORS, FONTFAMILY, hobbies, images, SHADOW } from "../constants";
 
-import FocusedStatusBar from "../utils/FocusedStatusBar";
+import { FocusedStatusBar } from "../utils";
+
+const HobbyCard = ({ name, iconUrl }) => (
+  <TouchableOpacity
+    activeOpacity={0.5}
+    style={{
+      width: 120,
+      margin: 10,
+      borderRadius: 18,
+      marginBottom: 20,
+      backgroundColor: COLORS.white,
+      ...SHADOW.darkShadow,
+      shadowColor: COLORS.lightBlue,
+    }}
+  >
+    <View
+      style={{
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "flex-start",
+        minHeight: 120,
+        width: "100%",
+        padding: 15,
+        borderRadius: 18,
+        backgroundColor: COLORS.white,
+      }}
+    >
+      <Image
+        source={iconUrl}
+        resizeMode="contain"
+        style={{
+          width: 30,
+          height: 30,
+        }}
+      />
+      <Text
+        style={{
+          fontFamily: FONTFAMILY.semiBold,
+          fontSize: 18,
+          color: COLORS.darkBlue,
+          lineHeight: 20,
+        }}
+        numberOfLines={1}
+      >
+        {name}
+      </Text>
+    </View>
+  </TouchableOpacity>
+);
 
 const Home = () => {
   return (
@@ -59,39 +108,13 @@ const Home = () => {
           />
         </View>
 
-        <View>
-          <View
-            style={{
-              flexDirection: "column",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
-              minHeight: 120,
-              width: 120,
-              padding: 20,
-              borderRadius: 5,
-              ...SHADOW.lightShadow,
-              shadowColor: COLORS.lightBlue,
-            }}
-          >
-            <Image
-              source={images.knight}
-              resizeMode="contain"
-              style={{
-                width: 25,
-                height: 25,
-              }}
-            />
-            <Text
-              style={{
-                fontFamily: FONTFAMILY.semiBold,
-                fontSize: 18,
-                color: COLORS.darkBlue,
-              }}
-            >
-              Chess
-            </Text>
-          </View>
-        </View>
+        <FlatList
+          data={hobbies}
+          renderItem={({ item }) => <HobbyCard {...item} />}
+          keyExtractor={(item) => item.id}
+          horizontal
+          contentContainerStyle={{ marginTop: 10 }}
+        />
       </View>
     </SafeAreaView>
   );
