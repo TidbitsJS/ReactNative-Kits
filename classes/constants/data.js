@@ -42,3 +42,17 @@ export const hobbies = [
     iconUrl: images.pencil,
   },
 ];
+
+export const bookedClasses = [
+  {
+    id: "bookedClass01",
+    name: "Chess",
+    teacherName: "Robert Jr.",
+    teacherImageUrl: images.teacher01,
+    date: "21 April 22",
+    time: "10:00 AM",
+    students: "8-16",
+    rating: 4.5,
+    level: "Beginner",
+  },
+];

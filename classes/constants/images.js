@@ -13,6 +13,7 @@ import videos from "../assets/icons/videos.png";
 import violin from "../assets/icons/violin.png";
 
 import kemal from "../assets/kemal.jpg";
+import teacher01 from "../assets/teacher01.jpg";
 
 export default {
   art,
@@ -30,4 +31,5 @@ export default {
   violin,
 
   kemal,
+  teacher01,
 };
