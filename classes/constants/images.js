@@ -11,9 +11,14 @@ import stack from "../assets/icons/stack.png";
 import user from "../assets/icons/user.png";
 import videos from "../assets/icons/videos.png";
 import violin from "../assets/icons/violin.png";
+import clock from "../assets/icons/clock.png";
+import people from "../assets/icons/people.png";
+import star from "../assets/icons/star.png";
 
 import kemal from "../assets/kemal.jpg";
 import teacher01 from "../assets/teacher01.jpg";
+import teacher02 from "../assets/teacher02.png";
+import teacher03 from "../assets/teacher03.jpg";
 
 export default {
   art,
@@ -29,7 +34,12 @@ export default {
   user,
   videos,
   violin,
+  clock,
+  people,
+  star,
 
   kemal,
   teacher01,
+  teacher02,
+  teacher03,
 };
