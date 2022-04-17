@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import BookedCard from "../components/BookedCard";
 import { COLORS, FONTFAMILY, hobbies, images, SHADOW } from "../constants";
+import { bookedClasses } from "../constants/data";
 
 import { FocusedStatusBar } from "../utils";
 
@@ -161,9 +162,15 @@ const Home = () => {
               </TouchableOpacity>
             </View>
 
-            <View style={{ marginTop: 20 }}>
-              <BookedCard />
-            </View>
+            <FlatList
+              data={bookedClasses}
+              renderItem={({ item, index }) => (
+                <BookedCard item={item} index={index} />
+              )}
+              keyExtractor={(item) => item.id}
+              horizontal
+              contentContainerStyle={{ marginTop: 10 }}
+            />
           </View>
         </View>
       </ScrollView>

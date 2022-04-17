@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { COLORS, FONTFAMILY, images } from "../constants";
 
-const BookedCard = ({ item }) => {
+const BookedCard = ({ item, index }) => {
   return (
     <View
       style={{
@@ -12,6 +12,8 @@ const BookedCard = ({ item }) => {
         alignItems: "center",
         borderRadius: 20,
         backgroundColor: COLORS.white,
+        margin: 10,
+        marginLeft: index === 0 ? 0 : 10,
       }}
     >
       <View
@@ -20,7 +22,7 @@ const BookedCard = ({ item }) => {
         }}
       >
         <Image
-          source={images.teacher01}
+          source={item.teacherImageUrl}
           resizeMode="cover"
           style={{
             width: "100%",
@@ -34,11 +36,16 @@ const BookedCard = ({ item }) => {
             position: "absolute",
             top: 20,
             left: 0,
-            backgroundColor: "#4E47E0",
+            backgroundColor:
+              item.level === "Expert"
+                ? "#FD8E26"
+                : item.level === "Medium"
+                ? "#28803b"
+                : "#4E47E0",
             paddingHorizontal: 10,
-            paddingVertical: 5,
-            borderTopRightRadius: 20,
-            borderBottomRightRadius: 20,
+            paddingVertical: 7,
+            borderTopRightRadius: 5,
+            borderBottomRightRadius: 5,
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -51,8 +58,87 @@ const BookedCard = ({ item }) => {
               lineHeight: 15,
             }}
           >
-            Beginner
+            {item.level}
           </Text>
+        </View>
+
+        <View
+          style={{
+            position: "absolute",
+            bottom: 10,
+            paddingHorizontal: 10,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingVertical: 5,
+              paddingLeft: 7,
+              paddingRight: 12,
+              borderRadius: 20,
+              backgroundColor: "rgba(0,0,0,0.5)",
+            }}
+          >
+            <Image
+              source={images.star}
+              resizeMode="contain"
+              style={{
+                width: 15,
+                height: 15,
+              }}
+            />
+            <Text
+              style={{
+                fontFamily: FONTFAMILY.medium,
+                fontSize: 12,
+                color: COLORS.white,
+                marginLeft: 5,
+                lineHeight: 17,
+              }}
+            >
+              {item.rating}
+            </Text>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingVertical: 5,
+              paddingLeft: 7,
+              paddingRight: 12,
+              borderRadius: 20,
+              backgroundColor: "rgba(0,0,0,0.5)",
+            }}
+          >
+            <Image
+              source={images.people}
+              resizeMode="contain"
+              style={{
+                width: 15,
+                height: 15,
+                tintColor: COLORS.white,
+              }}
+            />
+            <Text
+              style={{
+                fontFamily: FONTFAMILY.medium,
+                fontSize: 12,
+                color: COLORS.white,
+                marginLeft: 5,
+                lineHeight: 17,
+              }}
+            >
+              {item.students}
+            </Text>
+          </View>
         </View>
       </View>
 
@@ -72,7 +158,7 @@ const BookedCard = ({ item }) => {
             fontSize: 20,
           }}
         >
-          Robert Downey
+          {item.teacherName}
         </Text>
         <Text
           style={{
@@ -83,7 +169,7 @@ const BookedCard = ({ item }) => {
             marginTop: 5,
           }}
         >
-          Chess class
+          {item.name} class
         </Text>
 
         <View
@@ -118,7 +204,7 @@ const BookedCard = ({ item }) => {
                 lineHeight: 15,
               }}
             >
-              21 April 22
+              {item.date}
             </Text>
           </View>
           <View
@@ -138,7 +224,7 @@ const BookedCard = ({ item }) => {
               lineHeight: 15,
             }}
           >
-            10:00 AM
+            {item.time}
           </Text>
         </View>
       </View>
