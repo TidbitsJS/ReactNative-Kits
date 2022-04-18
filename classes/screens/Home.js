@@ -8,59 +8,17 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-import BookedCard from "../components/BookedCard";
-import { COLORS, FONTFAMILY, hobbies, images, SHADOW } from "../constants";
-import { bookedClasses } from "../constants/data";
 
 import { FocusedStatusBar } from "../utils";
-
-const HobbyCard = ({ name, iconUrl }) => (
-  <TouchableOpacity
-    activeOpacity={0.5}
-    style={{
-      width: 120,
-      margin: 10,
-      borderRadius: 18,
-      marginBottom: 20,
-      backgroundColor: COLORS.white,
-      ...SHADOW.darkShadow,
-      shadowColor: COLORS.lightBlue,
-    }}
-  >
-    <View
-      style={{
-        flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "flex-start",
-        minHeight: 120,
-        width: "100%",
-        padding: 15,
-        borderRadius: 18,
-        backgroundColor: COLORS.white,
-      }}
-    >
-      <Image
-        source={iconUrl}
-        resizeMode="contain"
-        style={{
-          width: 30,
-          height: 30,
-        }}
-      />
-      <Text
-        style={{
-          fontFamily: FONTFAMILY.semiBold,
-          fontSize: 18,
-          color: COLORS.darkBlue,
-          lineHeight: 20,
-        }}
-        numberOfLines={1}
-      >
-        {name}
-      </Text>
-    </View>
-  </TouchableOpacity>
-);
+import { HobbyCard, BookedCard } from "../components";
+import {
+  COLORS,
+  FONTFAMILY,
+  hobbies,
+  images,
+  SHADOW,
+  bookedClasses,
+} from "../constants";
 
 const Home = () => {
   return (
