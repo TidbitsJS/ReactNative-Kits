@@ -1,10 +1,38 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Animated,
+  TouchableOpacity,
+  Easing,
+} from "react-native";
 import { COLORS, FONTFAMILY, images } from "../constants";
 
-const BookedCard = ({ item, index }) => {
+const BookedCard = ({ item, index, activeProduct }) => {
+  const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+  const scale = React.useRef(new Animated.Value(0.9)).current;
+
+  React.useEffect(() => {
+    if (activeProduct === index) {
+      Animated.timing(scale, {
+        toValue: 1,
+        easing: Easing.ease,
+        duration: 500,
+        useNativeDriver: false,
+      }).start();
+    } else {
+      Animated.timing(scale, {
+        toValue: 0.9,
+        easing: Easing.ease,
+        duration: 500,
+        useNativeDriver: false,
+      }).start();
+    }
+  }, [activeProduct]);
+
   return (
-    <View
+    <AnimatedTouchable
       style={{
         width: 250,
         padding: 12,
@@ -14,6 +42,7 @@ const BookedCard = ({ item, index }) => {
         backgroundColor: COLORS.white,
         margin: 10,
         marginLeft: index === 0 ? 0 : 10,
+        transform: [{ scale }],
       }}
     >
       <View
@@ -228,7 +257,7 @@ const BookedCard = ({ item, index }) => {
           </Text>
         </View>
       </View>
-    </View>
+    </AnimatedTouchable>
   );
 };
 
