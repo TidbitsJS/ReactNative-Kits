@@ -14,6 +14,8 @@ import violin from "../assets/icons/violin.png";
 import clock from "../assets/icons/clock.png";
 import people from "../assets/icons/people.png";
 import star from "../assets/icons/star.png";
+import rightArrow from "../assets/icons/right-arrow.png";
+import downArrow from "../assets/icons/down-arrow.png";
 
 import kemal from "../assets/kemal.jpg";
 import teacher01 from "../assets/teacher01.jpg";
@@ -37,6 +39,8 @@ export default {
   clock,
   people,
   star,
+  rightArrow,
+  downArrow,
 
   kemal,
   teacher01,
