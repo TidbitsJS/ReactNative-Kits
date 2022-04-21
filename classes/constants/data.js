@@ -78,3 +78,31 @@ export const bookedClasses = [
     level: "Medium",
   },
 ];
+
+export const favouriteHobbies = [
+  {
+    id: "hobby07",
+    name: "Latte",
+    iconUrl: images.latteArt,
+  },
+  {
+    id: "hobby02",
+    name: "Art",
+    iconUrl: images.art,
+  },
+  {
+    id: "hobby03",
+    name: "Violin",
+    iconUrl: images.violin,
+  },
+  {
+    id: "hobby08",
+    name: "Writing",
+    iconUrl: images.pencil,
+  },
+  {
+    id: "hobby06",
+    name: "Photography",
+    iconUrl: images.camera,
+  },
+];

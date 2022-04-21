@@ -1,7 +1,21 @@
 import React from "react";
-import { View, Text, SafeAreaView, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import { ProfileTag } from "../components";
 
-import { COLORS, FONTFAMILY, images, SHADOW } from "../constants";
+import {
+  COLORS,
+  favouriteHobbies,
+  FONTFAMILY,
+  images,
+  SHADOW,
+} from "../constants";
 import { FocusedStatusBar } from "../utils";
 
 const Profile = () => {
@@ -132,39 +146,38 @@ const Profile = () => {
             style={{
               marginVertical: 10,
               padding: 20,
+              flexWrap: "wrap",
+              flexDirection: "row",
+              alignItems: "center",
             }}
           >
-            <View
+            {favouriteHobbies.map((item) => (
+              <ProfileTag
+                title={item.name}
+                iconUrl={item.iconUrl}
+                key={item.id}
+              />
+            ))}
+            <TouchableOpacity
               style={{
-                flexDirection: "row",
+                width: 40,
+                height: 40,
+                borderRadius: 12,
+                backgroundColor: "#EBEAEF",
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: COLORS.white,
-                borderRadius: 20,
-                padding: 10,
-                width: 100,
+                marginLeft: 5,
               }}
             >
-              <Text
-                style={{
-                  fontFamily: FONTFAMILY.semiBold,
-                  color: COLORS.mediumBlue,
-                  fontSize: 15,
-                  marginRight: 10,
-                  lineHeight: 20,
-                }}
-              >
-                Art
-              </Text>
               <Image
-                source={images.art}
+                source={images.edit}
                 style={{
-                  width: 20,
-                  height: 20,
+                  width: "40%",
+                  height: "40%",
                 }}
                 resizeMode="contain"
               />
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
