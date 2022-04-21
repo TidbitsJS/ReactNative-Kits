@@ -16,6 +16,7 @@ import people from "../assets/icons/people.png";
 import star from "../assets/icons/star.png";
 import rightArrow from "../assets/icons/right-arrow.png";
 import downArrow from "../assets/icons/down-arrow.png";
+import mail from "../assets/icons/mail.png";
 
 import kemal from "../assets/kemal.jpg";
 import teacher01 from "../assets/teacher01.jpg";
@@ -41,6 +42,7 @@ export default {
   star,
   rightArrow,
   downArrow,
+  mail,
 
   kemal,
   teacher01,
