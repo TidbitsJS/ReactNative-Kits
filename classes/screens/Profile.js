@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { ProfileTag } from "../components";
+import { CircularProgress, ProfileTag } from "../components";
 
 import {
   COLORS,
@@ -139,6 +139,16 @@ const Profile = () => {
                 </Text>
               </View>
             </View>
+          </View>
+
+          {/* Progress section */}
+          <View
+            style={{
+              padding: 20,
+              marginVertical: 10,
+            }}
+          >
+            <CircularProgress percent={85} />
           </View>
 
           {/* Tags section */}
