@@ -18,6 +18,9 @@ import rightArrow from "../assets/icons/right-arrow.png";
 import downArrow from "../assets/icons/down-arrow.png";
 import mail from "../assets/icons/mail.png";
 import edit from "../assets/icons/edit.png";
+import edits from "../assets/icons/edits.png";
+import logout from "../assets/icons/logout.png";
+import upload from "../assets/icons/upload.png";
 
 import kemal from "../assets/kemal.jpg";
 import teacher01 from "../assets/teacher01.jpg";
@@ -45,6 +48,9 @@ export default {
   downArrow,
   mail,
   edit,
+  edits,
+  logout,
+  upload,
 
   kemal,
   teacher01,

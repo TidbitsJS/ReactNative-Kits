@@ -10,17 +10,32 @@ const propStyle = (percent, base_degrees) => {
   };
 };
 
-const renderThirdLayer = (percent) => {
+const sizeStyle = (size) => {
+  return {
+    width: size,
+    height: size,
+    borderRadius: size / 2,
+    borderWidth: size / 10,
+  };
+};
+
+const renderThirdLayer = (percent, size) => {
   if (percent > 50) {
     return (
-      <View style={[styles.secondProgressLayer, propStyle(percent - 50, 45)]} />
+      <View
+        style={[
+          sizeStyle(size),
+          styles.secondProgressLayer,
+          propStyle(percent - 50, 45),
+        ]}
+      />
     );
   } else {
     return <View style={styles.offsetLayer} />;
   }
 };
 
-const CircularProgress = ({ percent }) => {
+const CircularProgress = ({ percent, size }) => {
   let firstProgressLayerStyle;
   if (percent > 50) {
     firstProgressLayerStyle = propStyle(50, -135);
@@ -29,28 +44,26 @@ const CircularProgress = ({ percent }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.firstProgressLayer, firstProgressLayerStyle]}></View>
-      {renderThirdLayer(percent)}
+    <View style={[styles.container, sizeStyle(size)]}>
+      <View
+        style={[
+          sizeStyle(size),
+          styles.firstProgressLayer,
+          firstProgressLayerStyle,
+        ]}
+      />
+      {renderThirdLayer(percent, size)}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: 40,
-    height: 40,
-    borderWidth: 4,
-    borderRadius: 20,
     borderColor: COLORS.gray,
     justifyContent: "center",
     alignItems: "center",
   },
   firstProgressLayer: {
-    width: 40,
-    height: 40,
-    borderWidth: 4,
-    borderRadius: 20,
     position: "absolute",
     borderLeftColor: "transparent",
     borderBottomColor: "transparent",
@@ -59,11 +72,7 @@ const styles = StyleSheet.create({
     transform: [{ rotateZ: "-135deg" }],
   },
   secondProgressLayer: {
-    width: 40,
-    height: 40,
     position: "absolute",
-    borderWidth: 4,
-    borderRadius: 20,
     borderLeftColor: "transparent",
     borderBottomColor: "transparent",
     borderRightColor: "#2FC579",
@@ -71,11 +80,7 @@ const styles = StyleSheet.create({
     transform: [{ rotateZ: "45deg" }],
   },
   offsetLayer: {
-    width: 40,
-    height: 40,
     position: "absolute",
-    borderWidth: 4,
-    borderRadius: 20,
     borderLeftColor: "transparent",
     borderBottomColor: "transparent",
     borderRightColor: COLORS.gray,
