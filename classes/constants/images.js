@@ -26,6 +26,8 @@ import kemal from "../assets/kemal.jpg";
 import teacher01 from "../assets/teacher01.jpg";
 import teacher02 from "../assets/teacher02.png";
 import teacher03 from "../assets/teacher03.jpg";
+import teacher04 from "../assets/teacher04.jpg";
+import teacher05 from "../assets/teacher05.jpeg";
 
 export default {
   art,
@@ -56,4 +58,6 @@ export default {
   teacher01,
   teacher02,
   teacher03,
+  teacher04,
+  teacher05,
 };

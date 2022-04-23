@@ -77,6 +77,28 @@ export const bookedClasses = [
     rating: 4.2,
     level: "Medium",
   },
+  {
+    id: "bookedClass04",
+    name: "Yoga",
+    teacherName: "Oğuzhan Karbi",
+    teacherImageUrl: images.teacher04,
+    date: "24 April 22",
+    time: "12:40 AM",
+    students: "20-40",
+    rating: 4.6,
+    level: "Expert",
+  },
+  {
+    id: "bookedClass05",
+    name: "Photography",
+    teacherName: "Chris Evans",
+    teacherImageUrl: images.teacher05,
+    date: "25 April 22",
+    time: "09:00 AM",
+    students: "10-16",
+    rating: 4.9,
+    level: "Beginner",
+  },
 ];
 
 export const favouriteHobbies = [
