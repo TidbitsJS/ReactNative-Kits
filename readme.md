@@ -156,3 +156,20 @@ Design - [Dribble](https://dribbble.com/shots/11867493-Job-finder-Mobile-UI-Job-
 Project - [Jobs](./jobs)
 
 Live - [Expo](https://expo.dev/@tidbit/jobs)
+
+#
+
+### Skillz Kit
+
+Description:
+
+- Skill classes UI
+- Two screens
+  - Home
+  - User details
+
+![skillz](./screenshots/skillz.png)
+
+Project - [Skillz](./classes)
+
+Live - [Expo](https://expo.dev/@tidbit/classes)
