@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, SafeAreaView, Image } from "react-native";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
+import { ShoeCard } from "../component";
 
-import { COLORS, FONT, icons, images, SIZES } from "../constants";
+import { COLORS, FONT, icons, images, products, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const filters = ["Sneakers", "Running", "Training", "Basketball"];
@@ -92,106 +93,15 @@ const Home = () => {
         </View>
         {/* Home Filter End */}
 
-        {/* Shoe card Start */}
-
-        <TouchableOpacity
-          style={{
-            marginRight: SIZES.medium,
-          }}
-        >
-          <View
-            style={{
-              maxWidth: 237,
-              padding: SIZES.large,
-              borderRadius: 36,
-              backgroundColor: COLORS.white,
-            }}
-          >
-            <Text
-              style={{
-                fontFamily: FONT.bebasNeue,
-                fontSize: 30,
-                color: COLORS.secondary,
-                maxWidth: 100,
-              }}
-              numberOfLines={1}
-            >
-              Michael
-            </Text>
-            <Text
-              style={{
-                fontFamily: FONT.bebasNeue,
-                fontSize: 43,
-                color: COLORS.secondary,
-                maxWidth: 100,
-              }}
-              numberOfLines={1}
-            >
-              Jordan
-            </Text>
-
-            <Text
-              style={{
-                fontFamily: FONT.bebasNeue,
-                fontSize: 30,
-                color: COLORS.primary,
-                marginTop: SIZES.medium,
-                maxWidth: 100,
-              }}
-              numberOfLines={1}
-            >
-              $ 140 USD
-            </Text>
-
-            <View style={{ justifyContent: "flex-end", marginTop: -50 }}>
-              <Image
-                source={images.sneakers01}
-                resizeMode="contain"
-                style={{
-                  width: 268,
-                  height: 172,
-                  transform: [{ rotate: "-19deg" }],
-                  zIndex: 1,
-                }}
-              />
-            </View>
-
-            <View
-              style={{
-                marginTop: SIZES.small,
-                width: "100%",
-                justifyContent: "flex-end",
-                alignItems: "flex-end",
-              }}
-            >
-              <TouchableOpacity
-                style={{
-                  width: 60,
-                  height: 60,
-                  borderRadius: SIZES.small,
-                  backgroundColor: COLORS.primary,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  shadowColor: COLORS.primary,
-                  shadowOffset: {
-                    width: 0,
-                    height: 10,
-                  },
-                  shadowOpacity: 0.51,
-                  shadowRadius: 13.16,
-
-                  elevation: 20,
-                }}
-              >
-                <Image
-                  source={icons.cart}
-                  resizeMode="contain"
-                  style={{ width: "50%", height: "50%" }}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-        </TouchableOpacity>
+        {/* Shoe cards Start */}
+        <FlatList
+          data={products}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <ShoeCard item={item} />}
+          horizontal
+          contentContainerStyle={{ marginTop: SIZES.small / 2 }}
+        />
+        {/* Shoe cards End */}
       </View>
     </SafeAreaView>
   );
