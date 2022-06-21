@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, SafeAreaView, Image } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
 
 import { COLORS, FONT, icons, images, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
+const filters = ["Sneakers", "Running", "Training", "Basketball"];
+
 const Home = () => {
+  const [activeFilter, setActiveFilter] = useState(filters[0]);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.tertiary }}>
       <FocusedStatusBar backgroundColor={COLORS.tertiary} />
+
       <View style={{ flex: 1, padding: SIZES.medium }}>
+        {/* Home Header Start */}
         <View
           style={{
             flexDirection: "row",
@@ -49,6 +55,42 @@ const Home = () => {
             </TouchableOpacity>
           </View>
         </View>
+        {/* Home Header End */}
+
+        {/* Home Filter Start */}
+        <View style={{ marginVertical: SIZES.large }}>
+          <FlatList
+            data={filters}
+            keyExtractor={(item) => item}
+            renderItem={({ item, index }) => (
+              <TouchableOpacity
+                style={{
+                  paddingVertical: SIZES.base,
+                  paddingHorizontal: SIZES.large,
+                  borderRadius: SIZES.small / 2,
+                  backgroundColor:
+                    activeFilter === item ? COLORS.primary : COLORS.tertiary,
+                  marginRight: index !== filters.length - 1 ? SIZES.medium : 0,
+                }}
+                onPress={() => setActiveFilter(item)}
+              >
+                <Text
+                  style={{
+                    fontFamily: FONT.bebasNeue,
+                    textTransform: "uppercase",
+                    fontSize: SIZES.medium,
+                    color:
+                      activeFilter === item ? COLORS.secondary : COLORS.white,
+                  }}
+                >
+                  {item}
+                </Text>
+              </TouchableOpacity>
+            )}
+            horizontal
+          />
+        </View>
+        {/* Home Filter End */}
       </View>
     </SafeAreaView>
   );
