@@ -15,4 +15,8 @@ const SIZES = {
   xxlarge: 32,
 };
 
-export { COLORS, SIZES };
+const FONT = {
+  bebasNeue: "BebasNeue",
+};
+
+export { COLORS, SIZES, FONT };
