@@ -3,25 +3,38 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 
 import { SIZES, COLORS, FONT, icons } from "../constants";
 
-const ShoeCard = ({ item }) => {
+const ShoeCard = ({
+  item,
+  cardRight,
+  cardMaxWidth,
+  cardRadius,
+  companyFontSize,
+  nameFontSize,
+  priceFontSize,
+  imageTop,
+  imageWidth,
+  imageHeight,
+  imageLeft,
+  cartDimension,
+}) => {
   return (
     <TouchableOpacity
       style={{
-        marginRight: SIZES.xxlarge * 2,
+        marginRight: cardRight,
       }}
     >
       <View
         style={{
-          maxWidth: 237,
+          maxWidth: cardMaxWidth,
           padding: SIZES.large,
-          borderRadius: 36,
+          borderRadius: cardRadius,
           backgroundColor: COLORS.white,
         }}
       >
         <Text
           style={{
             fontFamily: FONT.bebasNeue,
-            fontSize: 30,
+            fontSize: companyFontSize,
             color: COLORS.secondary,
             maxWidth: 100,
           }}
@@ -32,7 +45,7 @@ const ShoeCard = ({ item }) => {
         <Text
           style={{
             fontFamily: FONT.bebasNeue,
-            fontSize: 43,
+            fontSize: nameFontSize,
             color: COLORS.secondary,
             maxWidth: 100,
             marginTop: -7,
@@ -45,7 +58,7 @@ const ShoeCard = ({ item }) => {
         <Text
           style={{
             fontFamily: FONT.bebasNeue,
-            fontSize: 30,
+            fontSize: priceFontSize,
             color: COLORS.primary,
             marginTop: SIZES.medium,
             maxWidth: 100,
@@ -55,16 +68,16 @@ const ShoeCard = ({ item }) => {
           $ {item.price} USD
         </Text>
 
-        <View style={{ marginTop: -70 }}>
+        <View style={{ marginTop: imageTop }}>
           <Image
             source={item.imgUrl}
             resizeMode="contain"
             style={{
-              width: 288,
-              height: 192,
+              width: imageWidth,
+              height: imageHeight,
               transform: [{ rotate: "-19deg" }],
               zIndex: 1,
-              marginLeft: -30,
+              marginLeft: imageLeft,
             }}
           />
         </View>
@@ -78,8 +91,8 @@ const ShoeCard = ({ item }) => {
         >
           <TouchableOpacity
             style={{
-              width: 60,
-              height: 60,
+              width: cartDimension,
+              height: cartDimension,
               borderRadius: SIZES.small,
               backgroundColor: COLORS.primary,
               justifyContent: "center",
