@@ -173,3 +173,16 @@ Description:
 Project - [Skillz](./classes)
 
 Live - [Expo](https://expo.dev/@tidbit/classes)
+
+#
+
+### Shoes Kit
+
+Description:
+
+- Shoes App UI
+- Only Home Screen
+
+![Shoes](./screenshots/shoes.png)
+
+Project - [Shoes](./shoes)
